@@ -2,7 +2,7 @@ package model.bean;
 
 import java.util.Date;
 
-import org.fpij.jitakyoei.util.CorFaixa;
+import util.CorFaixa;
 
 public class Faixa {
 	CorFaixa cor;
