@@ -32,6 +32,7 @@ public class Faixa {
 		this.dataEntrega = dataEntrega;
 	}
 	
+	@Override
 	public String toString(){
 		return this.cor + " - "+ this.dataEntrega;
 	}
