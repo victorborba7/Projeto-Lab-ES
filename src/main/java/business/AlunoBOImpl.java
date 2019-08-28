@@ -2,31 +2,19 @@ package business;
 
 import java.util.List;
 
-import org.fpij.jitakyoei.model.beans.Aluno;
-import org.fpij.jitakyoei.model.dao.DAO;
-import org.fpij.jitakyoei.model.dao.DAOImpl;
-import org.fpij.jitakyoei.util.FiliadoID;
-import org.fpij.jitakyoei.view.AppView;
+import model.bean.Aluno;
+import model.dao.DAO;
+import model.dao.DAOImpl;
+import util.FiliadoID;
 
 public class AlunoBOImpl implements AlunoBO {
 	private static DAO<Aluno> dao = new DAOImpl<Aluno>(Aluno.class);
-	private AppView view;
 
-	public AlunoBOImpl(AppView view) {
-		this.view = view;
-	}
-
-	private void fireModelChangeEvent(Aluno aluno) {
-		view.handleModelChange(aluno);
-	}
-
-	@Override
 	public void createAluno(Aluno aluno) throws Exception {
 		System.out.println("AlunoBOImpl.createAluno()");
 		try {
 			aluno.getFiliado().setId(FiliadoID.getNextID());
 			dao.save(aluno);
-			fireModelChangeEvent(aluno);
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao cadastrar o aluno!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
@@ -36,7 +24,6 @@ public class AlunoBOImpl implements AlunoBO {
 		}
 	}
 
-	@Override
 	public void updateAluno(Aluno aluno) throws Exception{
 		try {
 			Aluno old = null;
@@ -44,7 +31,6 @@ public class AlunoBOImpl implements AlunoBO {
 			if(old!=null){		
 				old.copyProperties(aluno);
 			}
-			fireModelChangeEvent(old);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 			throw new IllegalArgumentException( "Ocorreu um erro ao salvar os dados do aluno."
@@ -57,7 +43,6 @@ public class AlunoBOImpl implements AlunoBO {
 	
 	
 
-	@Override
 	public List<Aluno> searchAluno(Aluno aluno) throws Exception {
 		List<Aluno> result;
 		try {
@@ -72,7 +57,6 @@ public class AlunoBOImpl implements AlunoBO {
 		return result;
 	}
 
-	@Override
 	public List<Aluno> listAll() throws Exception {
 		List<Aluno> result;
 		try {
