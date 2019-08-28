@@ -1,7 +1,6 @@
 package model.bean;
 
 import java.util.Date;
-
 import util.CorFaixa;
 
 public class Faixa {
