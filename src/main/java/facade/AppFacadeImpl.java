@@ -3,44 +3,33 @@ package facade;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JOptionPane;
-
-import org.fpij.jitakyoei.business.AlunoBO;
-import org.fpij.jitakyoei.business.AlunoBOImpl;
-import org.fpij.jitakyoei.business.EntidadeBO;
-import org.fpij.jitakyoei.business.EntidadeBOImpl;
-import org.fpij.jitakyoei.business.ProfessorBO;
-import org.fpij.jitakyoei.business.ProfessorBOImpl;
-import org.fpij.jitakyoei.business.ProfessorEntidadeBO;
-import org.fpij.jitakyoei.business.ProfessorEntidadeBOImpl;
-import org.fpij.jitakyoei.model.beans.Aluno;
-import org.fpij.jitakyoei.model.beans.Entidade;
-import org.fpij.jitakyoei.model.beans.Professor;
-import org.fpij.jitakyoei.model.beans.ProfessorEntidade;
-import org.fpij.jitakyoei.view.AppView;
+import business.AlunoBO;
+import business.AlunoBOImpl;
+import business.EntidadeBO;
+import business.EntidadeBOImpl;
+import business.ProfessorBO;
+import business.ProfessorBOImpl;
+import business.ProfessorEntidadeBO;
+import business.ProfessorEntidadeBOImpl;
+import model.bean.Aluno;
+import model.bean.Entidade;
+import model.bean.Professor;
+import model.bean.ProfessorEntidade;
 
 public class AppFacadeImpl implements AppFacade {
 	
-	private AppView view;
 	private AlunoBO alunoBO;
 	private ProfessorBO professorBO;
 	private EntidadeBO entidadeBO;
 	private ProfessorEntidadeBO professorEntidadeBO;
 	
-	public AppFacadeImpl(AppView view) {
-		this.view = view;
-		this.alunoBO = new AlunoBOImpl(view);
-		this.professorBO = new ProfessorBOImpl(view);
-		this.entidadeBO = new EntidadeBOImpl(view);
-		this.professorEntidadeBO = new ProfessorEntidadeBOImpl(view);
+	public AppFacadeImpl() {
 	}
 
 	private void reportException(Exception e){
-		view.displayException(e);
 	}
 	
-	@Override
 	public void createAluno(Aluno aluno) {
 		System.out.println("AppFacadeImpl.createAluno()");
 		try{
@@ -50,7 +39,6 @@ public class AppFacadeImpl implements AppFacade {
 		}
 	}
 
-	@Override
 	public void updateAluno(Aluno aluno) {
 		try{
 			alunoBO.updateAluno(aluno);
@@ -59,7 +47,6 @@ public class AppFacadeImpl implements AppFacade {
 		}
 	}
 
-	@Override
 	public List<Aluno> searchAluno(Aluno aluno) {
 		List<Aluno> result = new ArrayList<Aluno>();
 		try{
@@ -70,7 +57,6 @@ public class AppFacadeImpl implements AppFacade {
 		return result;
 	}
 
-	@Override
 	public void listAlunos() {
 		try{
 			alunoBO.listAll();
@@ -79,7 +65,6 @@ public class AppFacadeImpl implements AppFacade {
 		}
 	}
 
-	@Override
 	public void createProfessor(Professor professor) {
 		try{
 			professorBO.createProfessor(professor);
@@ -89,7 +74,6 @@ public class AppFacadeImpl implements AppFacade {
 		}		
 	}
 
-	@Override
 	public List<Professor> listProfessores() {
 		List<Professor> result = null;
 		try{
@@ -100,7 +84,6 @@ public class AppFacadeImpl implements AppFacade {
 		return result;
 	}
 
-	@Override
 	public List<Professor> searchProfessor(Professor professor) {
 		List<Professor> result = null;
 		try{
@@ -111,7 +94,6 @@ public class AppFacadeImpl implements AppFacade {
 		return result;
 	}
 
-	@Override
 	public void updateProfessor(Professor professor) {
 		try{
 			professorBO.updateProfessor(professor);
@@ -120,7 +102,6 @@ public class AppFacadeImpl implements AppFacade {
 		}
 	}
 
-	@Override
 	public void createEntidade(Entidade entidade) {
 		try{
 			entidadeBO.createEntidade(entidade);
@@ -129,7 +110,6 @@ public class AppFacadeImpl implements AppFacade {
 		}
 	}
 
-	@Override
 	public List<Entidade> listEntidade() {
 		List<Entidade> result = null;
 		try{
@@ -140,7 +120,6 @@ public class AppFacadeImpl implements AppFacade {
 		return result; 
 	}
 
-	@Override
 	public List<Entidade> searchEntidade(Entidade entidade) {
 		List<Entidade> result = null;
 		try{
@@ -151,7 +130,6 @@ public class AppFacadeImpl implements AppFacade {
 		return result;
 	}
 
-	@Override
 	public void updateEntidade(Entidade entidade) {
 		try{
 			entidadeBO.updateEntidade(entidade);
@@ -160,7 +138,6 @@ public class AppFacadeImpl implements AppFacade {
 		}
 	}
 
-	@Override
 	public void createProfessorEntidade(List<ProfessorEntidade> relacionamentos) {
 		try{
 			professorEntidadeBO.createProfessorEntidade(relacionamentos);
