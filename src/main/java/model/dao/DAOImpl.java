@@ -45,4 +45,19 @@ public class DAOImpl<E> implements DAO<E> {
 			return true;
 		}
 	}
+
+    public boolean save(E object) throws IllegalArgumentException {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    public void delete(E object) throws IllegalArgumentException {
+        // TODO Auto-generated method stub
+        
+    }
+
+    public E get(E object) throws IllegalArgumentException {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }
