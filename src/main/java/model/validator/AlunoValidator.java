@@ -1,6 +1,6 @@
 package model.validator;
 
-import org.fpij.jitakyoei.model.beans.Aluno;
+import model.bean.Aluno;
 
 public class AlunoValidator implements Validator<Aluno>{
 	public boolean validate(Aluno obj) {
