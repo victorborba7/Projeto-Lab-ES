@@ -1,9 +1,8 @@
 package util;
 
 import java.util.List;
-
-import org.fpij.jitakyoei.model.dao.DAO;
-import org.fpij.jitakyoei.model.dao.DAOImpl;
+import model.dao.DAO;
+import model.dao.DAOImpl;
 
 public class FiliadoID {
 	private long qtd;
