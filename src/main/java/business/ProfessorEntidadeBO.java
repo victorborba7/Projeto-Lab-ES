@@ -1,8 +1,7 @@
 package business;
 
 import java.util.List;
-
-import org.fpij.jitakyoei.model.beans.ProfessorEntidade;
+import model.bean.ProfessorEntidade;
 
 public interface ProfessorEntidadeBO {
 	public void createProfessorEntidade(List<ProfessorEntidade> relacionamentos)
