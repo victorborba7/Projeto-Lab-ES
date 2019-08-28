@@ -2,7 +2,7 @@ package business;
 
 import java.util.List;
 
-import org.fpij.jitakyoei.model.beans.Aluno;
+import model.bean.Aluno;
 
 public interface AlunoBO {
 	public void createAluno(Aluno aluno) throws Exception;
