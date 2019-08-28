@@ -2,7 +2,7 @@ package business;
 
 import java.util.List;
 
-import org.fpij.jitakyoei.model.beans.Entidade;
+import model.bean.Entidade;
 
 public interface EntidadeBO {
 	public void createEntidade(Entidade entidade) throws Exception;
