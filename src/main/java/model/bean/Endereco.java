@@ -1,8 +1,5 @@
 package model.bean;
 
-import net.java.dev.genesis.annotation.Form;
-
-@Form
 public class Endereco {
 	String rua;
 	String numero;
@@ -11,6 +8,7 @@ public class Endereco {
 	String estado;
 	String cep;
 	
+	@Override
 	public String toString(){
 		return "\nRua: "+rua+
 				"\nNumero: "+numero+
