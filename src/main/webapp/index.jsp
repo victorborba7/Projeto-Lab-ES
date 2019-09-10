@@ -12,7 +12,7 @@
 
 <body>
     <div class="login-clean" style="padding-bottom: 80px;height: 100vh;">
-        <form method="post">
+        <form method="post" action="pagina-menus.jsp" id="login">
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration" style="height: 100px;">
                 <h1 style="color: rgb(0,0,0);">JUDOCAS</h1>
@@ -20,7 +20,7 @@
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Login"></div>
             <div class="form-group" style="height: 30px;"><input class="form-control" type="password" name="password" placeholder="Senha"></div><a class="text-right forgot" href="#">Esqueceu sua senha?</a>
         </form>
-		<div class="form-group"><button class="btn btn-primary btn-block" type="submit" formaction="pagina-menus.jsp" style="background-color: rgb(0,0,0); width: 320px;">Log In</button></div>
+		<div class="form-group"><button class="btn btn-primary btn-block" type="submit" form="login" style="background-color: rgb(0,0,0); width: 320px;">Log In</button></div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
