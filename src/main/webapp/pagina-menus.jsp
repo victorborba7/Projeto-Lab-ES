@@ -7,13 +7,13 @@
     <title>pagina menus</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="css/Login-Form-Dark.css">
-    <link rel="stylesheet" href="css/sidebar-1.css">
-    <link rel="stylesheet" href="css/Sidebar-Menu-1.css">
-    <link rel="stylesheet" href="css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="css/sidebar.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
+    <link rel="stylesheet" href="assets/css/sidebar-1.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu-1.css">
+    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="assets/css/sidebar.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body style="background-color: rgb(241,247,252);">
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="row text-center">
-                        <div class="col"><img src="img/pagina_inicial.png" height="500px" width="75%" style="filter: blur(0px) contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%);"></div>
+                        <div class="col"><img src="assets/img/pagina_inicial.png" height="500px" width="75%" style="filter: blur(0px) contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%);"></div>
                     </div>
                 </div>
                 <div id="cadastrar_dojo" style="display: none;width: 100%;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-dojo" href="#menu-toggle2"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
@@ -160,8 +160,8 @@
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-	<script src="js/sidebar_menu.js"></script>
-    <script src="js/change_divs.js"></script>
+	<script src="assets/js/sidebar_menu.js"></script>
+    <script src="assets/js/change_divs.js"></script>
 </body>
 
 </html>
