@@ -1,3 +1,5 @@
+<%@ page language="java" pageEncoding="UTF-8" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -60,7 +62,7 @@
                             <div>
                                 <h1 class="text-center" style="margin-bottom: 20px;" id="boas_vindas">Bem vindo</h1>
                             </div>
-                            <p class="text-center" style="color: rgb(0,0,0);">Selecione no canto esquerdo a op��o desejada</p>
+                            <p class="text-center" style="color: rgb(0,0,0);">Selecione no canto esquerdo a opção desejada</p>
                         </div>
                     </div>
                     <div class="row text-center">
@@ -75,19 +77,20 @@
                             </div>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);">
+                            <form action="SearchAluno.do" method="post" style="background-color: rgb(241,247,252);">
                                 <div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_cadastro"></div>
                                 <div class="form-group"><input class="form-control" type="text" name="cnpj" placeholder="CNPJ" id="txb_cnpj_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex" type="text" name="telefone" placeholder="Telefone 1" id="txb_telefone_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="telefone" placeholder="Telefone 2" id="txb_celular_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="rua" placeholder="Rua" id="txb_rua_dojo_cadastro"></div>
-                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="numero" placeholder="Número" id="txb_numero_dojo_cadastro"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="numero" placeholder="NÃºmero" id="txb_numero_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="texl" name="bairro" placeholder="Bairro" id="txb_bairro_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="estado" placeholder="Estado" id="txb_estado_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cidade" placeholder="Cidade" id="txb_cidade_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="cep" placeholder="CEP" id="txb_cep_dojo_cadastro"></div>
+                                <div class="form-group d-inline-block"><input type="submit" value="CADASTRAR"> </div>
                             </form>
-							<div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_dojo">CADASTRAR</button></div>
+							<!-- div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_dojo">CADASTRAR</button></div -->
                         </div>
                     </div>
                 </div>
@@ -103,13 +106,13 @@
 							<div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dojo_busca">BUSCAR</button></div>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-12 col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);">
+                            <form style="background-color: rgb(241,247,252);" action="SearchAluno.do" method="get">
                                 <div class="form-group"><input class="form-control dojo_edicao" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true" id="txb_nome_dojo_edicao"></div>
                                 <div class="form-group"><input class="form-control dojo_edicao" type="text" name="cnpj" placeholder="CNPJ" disabled="true" id="txb_cnpj_dojo_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex dojo_edicao" type="text" name="telefone" placeholder="Telefone 1" disabled="true" id="txb_telefone_dojo_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="telefone" placeholder="Telefone 2" disabled="true" id="txb_celular_dojo_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="rua" placeholder="Rua" disabled="true" id="txb_rua_dojo_edicao"></div>
-                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="numero" placeholder="Número" disabled="true" id="txb_numero_dojo_edicao"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="numero" placeholder="NÃºmero" disabled="true" id="txb_numero_dojo_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="bairro" placeholder="Bairro" disabled="true" id="txb_bairro_dojo_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="estado" placeholder="Estado" disabled="true" id="txb_estado_dojo_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="cidade" placeholder="Cidade" disabled="true" id="txb_cidade_dojo_edicao"></div>
@@ -152,7 +155,7 @@
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cpf" placeholder="CPF" id="txb_cpf_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="celular_aluno" placeholder="Celular" id="txb_celular_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="rua_aluno" placeholder="Rua" id="txb_rua_aluno_cadastro"></div>
-                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="numero_aluno" placeholder="N�mero" id="txb_numero_aluno_cadastro"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="numero_aluno" placeholder="Número" id="txb_numero_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="bairro_aluno" placeholder="Bairro" id="txb_bairro_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="estado_aluno" placeholder="Estado" id="txb_estado_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cidade_aluno" placeholder="Cidade" id="txb_cidade_aluno_cadastro"></div>
@@ -183,7 +186,7 @@
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cpf" placeholder="CPF" disabled="true" id="txb_cpf_aluno_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="celular_aluno" placeholder="Celular" disabled="true" id="txb_celular_aluno_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="rua_aluno" placeholder="Rua" disabled="true" id="txb_rua_aluno_edicao"></div>
-                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="numero_aluno" placeholder="N�mero" disabled="true" id="txb_numero_aluno_edicao"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="numero_aluno" placeholder="Número" disabled="true" id="txb_numero_aluno_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="bairro_aluno" placeholder="Bairro" disabled="true" id="txb_bairro_aluno_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="estado_aluno" placeholder="Estado" disabled="true" id="txb_estado_aluno_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cidade_aluno" placeholder="Cidade" disabled="true" id="txb_cidade_aluno_edicao"></div>
