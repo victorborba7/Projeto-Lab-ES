@@ -10,8 +10,8 @@
 </head>
 <body>
 	<%
-		String aluno = (String) request.getAttribute("alunos");
-		out.print("<br>Try: " + aluno);
+		List<Aluno> aluno = (List<Aluno>) request.getAttribute("alunos");
+		out.print("<br>Try: " + aluno.size());
 	%>
 </body>
 </html>
