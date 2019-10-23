@@ -1,11 +1,33 @@
 package model.bean;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "entidade")
 public class Entidade {
+	
+	@Id
+	@GeneratedValue
+	private Long entidade_id;
+	
+	@Column
 	String nome;
+	
+	@Column
 	String cnpj;
+
+	@Column
 	String telefone1;
+
+	@Column
 	String telefone2;
+
+	@OneToOne(mappedBy = "entidade")
 	Endereco endereco;
 	
 	@Override

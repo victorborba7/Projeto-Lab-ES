@@ -14,7 +14,7 @@ public class ProfessorEntidade {
 	public boolean equals(Object obj) {
 		if(obj instanceof ProfessorEntidade){
 			ProfessorEntidade other = (ProfessorEntidade) obj;
-			return 	professor.filiado.id == other.professor.filiado.id &&
+			return 	professor.filiado.filiado_id == other.professor.filiado.filiado_id &&
 					entidade.nome.equals(other.entidade.nome);
 		}
 		return false;

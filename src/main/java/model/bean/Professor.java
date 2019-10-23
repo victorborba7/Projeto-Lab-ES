@@ -12,7 +12,7 @@ public class Professor {
 	public boolean equals(Object obj) {
 		if(obj instanceof Professor){
 			Professor other = (Professor) obj;
-			return 	filiado.id == other.filiado.id;
+			return 	filiado.filiado_id == other.filiado.filiado_id;
 		}
 		return false;
 	}

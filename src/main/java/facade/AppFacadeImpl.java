@@ -3,15 +3,13 @@ package facade;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.JOptionPane;
+
 import business.AlunoBO;
-import business.AlunoBOImpl;
 import business.EntidadeBO;
-import business.EntidadeBOImpl;
 import business.ProfessorBO;
-import business.ProfessorBOImpl;
 import business.ProfessorEntidadeBO;
-import business.ProfessorEntidadeBOImpl;
 import model.bean.Aluno;
 import model.bean.Entidade;
 import model.bean.Professor;

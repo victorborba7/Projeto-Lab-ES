@@ -4,31 +4,58 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
-import com.sun.istack.NotNull;
 
 @Entity
 @Table(name = "filiado")
 public class Filiado {
-	
 	@Id
-	@NotNull
-	Long id;
+	@GeneratedValue
+	@Column(name = "id")
+	Long filiado_id;
 	
+	@Column
 	String nome;
+	
+	@Column
 	String registroCbj;
+	
+	@Column
 	Date dataNascimento;
+	
+	@Column
 	Date dataCadastro;
+	
+	@Column
 	String telefone1;
+	
+	@Column
 	String telefone2;
+	
+	@Column
 	String email;
+
+	@Column
 	String cpf;
+
+	@Column
 	String observacoes;
+
+	@OneToOne(mappedBy="filiado",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	Rg rg = new Rg();
+
+	@OneToOne(mappedBy="filiado",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
 	Endereco endereco = new Endereco();
+	
+	@OneToMany(mappedBy="filiado")
 	List<Faixa> faixas = new ArrayList<Faixa>();
 	
 	public String toString(){
@@ -44,7 +71,7 @@ public class Filiado {
 	public boolean equals(Object obj) {
 		if(obj instanceof Filiado){
 			Filiado other = (Filiado) obj;
-			return 	id == other.id &&
+			return 	filiado_id == other.filiado_id &&
 					nome.equals(other.nome);
 		}
 		return false;
@@ -52,14 +79,14 @@ public class Filiado {
 	
 	@Override
 	public int hashCode() {
-		return (int)(long) id;
+		return (int)(long) filiado_id;
 	}
 	
 	public Long getId() {
-		return id;
+		return filiado_id;
 	}
 	public void setId(Long id) {
-		this.id = id;
+		this.filiado_id = id;
 	}
 	public String getNome() {
 		return nome;
@@ -137,7 +164,7 @@ public class Filiado {
 	}
 
 	public void copyProperties(Filiado f) {
-		id = f.id;
+		filiado_id = f.filiado_id;
 		nome = f.nome;
 		registroCbj = f.registroCbj;
 		dataNascimento = f.dataNascimento;
