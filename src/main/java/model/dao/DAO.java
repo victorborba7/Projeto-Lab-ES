@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface DAO<E> {
 
-	public abstract boolean save(E object)
+	public abstract void save(E object)
 	throws IllegalArgumentException;
 
 	public abstract void delete(E object)

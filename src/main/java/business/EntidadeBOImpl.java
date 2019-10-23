@@ -62,4 +62,18 @@ public class EntidadeBOImpl implements EntidadeBO {
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar a entidade.");
 		}
 	}
+	
+	public Entidade getEntidade(Entidade entidade) throws Exception{
+		Entidade enti;
+		try {
+			enti = dao.get(entidade);
+		} catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException( "Ocorreu um erro ao atualizar a entidade!"
+				+ " Verifique se todos os dados foram preenchidos corretamente.");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar a entidade.");
+		}
+		return enti;
+	}
 }

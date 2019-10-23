@@ -31,11 +31,16 @@ public class SearchAluno extends HttpServlet {
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	Entidade e = new Entidade();
+    	Entidade en = new Entidade();
     	e.setCnpj("123");
     	e.setNome("Nome");
     	e.setTelefone1("111");
     	e.setTelefone2("222");
-    	
+    	try {
+			en = entidade.getEntidade(e);
+		} catch (Exception e3) {
+			e3.printStackTrace();
+		}
     	try {
 			entidade.createEntidade(e);
 		} catch (Exception e1) {
