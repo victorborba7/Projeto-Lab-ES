@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2019 9:44:38 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.bean.Endereco" table="endereco">
+        <id name="cidade" type="java.lang.String">
+            <column name="cidade" />
+            <generator class="assigned" />
+        </id>
+        <property name="rua" type="java.lang.String">
+            <column name="rua" />
+        </property>
+        <property name="numero" type="java.lang.String">
+            <column name="numero" />
+        </property>
+        <property name="bairro" type="java.lang.String">
+            <column name="bairro" />
+        </property>
+        <property name="estado" type="java.lang.String">
+            <column name="estado" />
+        </property>
+        <property name="cep" type="java.lang.String">
+            <column name="cep" />
+        </property>
+    </class>
+</hibernate-mapping>

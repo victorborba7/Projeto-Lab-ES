@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2019 9:44:38 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.bean.Professor" table="professor">
+        <id name="filiado" type="model.bean.Filiado">
+            <column name="filiado" />
+            <generator class="assigned" />
+        </id>
+        <list name="entidades" inverse="false" table="entidade" lazy="true">
+            <key>
+                <column name="filiado" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="model.bean.Entidade" />
+        </list>
+    </class>
+</hibernate-mapping>

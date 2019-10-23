@@ -4,8 +4,20 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import com.sun.istack.NotNull;
+
+@Entity
+@Table(name = "filiado")
 public class Filiado {
+	
+	@Id
+	@NotNull
 	Long id;
+	
 	String nome;
 	String registroCbj;
 	Date dataNascimento;

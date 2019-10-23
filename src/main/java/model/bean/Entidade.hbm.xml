@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2019 9:44:38 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.bean.Entidade" table="entidade">
+        <id name="nome" type="java.lang.String">
+            <column name="nome" />
+            <generator class="assigned" />
+        </id>
+        <property name="cnpj" type="java.lang.String">
+            <column name="cnpj" />
+        </property>
+        <property name="telefone1" type="java.lang.String">
+            <column name="telefone1" />
+        </property>
+        <property name="telefone2" type="java.lang.String">
+            <column name="telefone2" />
+        </property>
+        <many-to-one name="endereco" class="model.bean.Endereco" fetch="join">
+            <column name="endereco" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

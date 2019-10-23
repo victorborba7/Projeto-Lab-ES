@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Oct 22, 2019 9:44:38 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="model.bean.Filiado" table="filiado">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="nome" type="java.lang.String">
+            <column name="nome" />
+        </property>
+        <property name="registroCbj" type="java.lang.String">
+            <column name="registrocbj" />
+        </property>
+        <property name="dataNascimento" type="java.util.Date">
+            <column name="datanascimento" />
+        </property>
+        <property name="dataCadastro" type="java.util.Date">
+            <column name="datacastro" />
+        </property>
+        <property name="telefone1" type="java.lang.String">
+            <column name="telefone1" />
+        </property>
+        <property name="telefone2" type="java.lang.String">
+            <column name="telefone2" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="email" />
+        </property>
+        <property name="cpf" type="java.lang.String">
+            <column name="cpf" />
+        </property>
+        <property name="observacoes" type="java.lang.String">
+            <column name="observacoes" />
+        </property>
+        <many-to-one name="rg" class="model.bean.Rg" fetch="join">
+            <column name="rg" />
+        </many-to-one>
+        <many-to-one name="endereco" class="model.bean.Endereco" fetch="join">
+            <column name="endereco" />
+        </many-to-one>
+        <list name="faixas" inverse="false" table="faixa" lazy="true">
+            <key>
+                <column name="id" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="model.bean.Faixa" />
+        </list>
+    </class>
+</hibernate-mapping>
