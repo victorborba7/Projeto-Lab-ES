@@ -12,9 +12,20 @@
 		<servlet-name>SearchAluno</servlet-name>
 		<servlet-class>servlet.SearchAluno</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DojoServlet</display-name>
+		<servlet-name>DojoServlet</servlet-name>
+		<servlet-class>servlet.DojoServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>SearchAluno</servlet-name>
 		<url-pattern>/SearchAluno.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DojoServlet</servlet-name>
+		<url-pattern>/addDojo.do</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
