@@ -83,9 +83,9 @@
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="estado" placeholder="Estado" id="txb_estado_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cidade" placeholder="Cidade" id="txb_cidade_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="cep" placeholder="CEP" id="txb_cep_dojo_cadastro"></div>
-                                <div class="form-group d-inline-block"><input type="submit" value="CADASTRAR"> </div>
+                                <input type="hidden" name="operacao" value="cadastrar">
+                                <div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_dojo">CADASTRAR</button></div>
                             </form>
-							<!-- div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_dojo">CADASTRAR</button></div -->
                         </div>
                     </div>
                 </div>
@@ -97,8 +97,11 @@
                             </div>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto" style="filter: blur(0px);">
-							<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_dojo_buscar" placeholder="Nome do dojo" id="txb_adm_nome_dojo_busca"></div>
-							<div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dojo_busca">BUSCAR</button></div>
+                        	<form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;">
+								<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_dojo_buscar" placeholder="Nome do dojo" id="txb_adm_nome_dojo_busca"></div>
+								<input type="hidden" name="operacao" value="editar">
+								<div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dojo_busca">BUSCAR</button></div>
+							</form>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-12 col-xl-11 m-auto">
                             <form style="background-color: rgb(241,247,252);" action="SearchAluno.do" method="get">
@@ -112,8 +115,9 @@
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="estado" placeholder="Estado" disabled="true" id="txb_estado_dojo_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="cidade" placeholder="Cidade" disabled="true" id="txb_cidade_dojo_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="cep" placeholder="CEP" disabled="true" id="txb_cep_dojo_edicao"></div>
+                                <input type="hidden" name="operacao" value="editar">
+                                <div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_dojo">EDITAR</button></div>
                             </form>
-							<div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_dojo">EDITAR</button></div>
                         </div>
                     </div>
                 </div>
@@ -155,6 +159,7 @@
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="estado_aluno" placeholder="Estado" id="txb_estado_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cidade_aluno" placeholder="Cidade" id="txb_cidade_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="cep_aluno" placeholder="CEP" id="txb_cep_aluno_cadastro"></div>
+                                <input type="hidden" name="operacao" value="cadastrar">
                                 <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_aluno">CADASTRAR</button></div>
                             </form>
                         </div>
@@ -170,6 +175,7 @@
                         <div class="col-xl-11 m-auto" style="filter: blur(0px);">
                             <form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;">
                                 <div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_aluno_buscar" placeholder="Nome do aluno" id="txb_adm_nome_aluno_busca"></div>
+                                <input type="hidden" name="operacao" value="buscar">
                                 <div class="form-group text-center d-inline-block float-none" style="margin-left: 15px;"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_aluno_busca">BUSCAR</button></div>
                             </form>
                         </div>
@@ -186,6 +192,7 @@
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="estado_aluno" placeholder="Estado" disabled="true" id="txb_estado_aluno_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cidade_aluno" placeholder="Cidade" disabled="true" id="txb_cidade_aluno_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cep_aluno" placeholder="CEP" disabled="true" id="txb_cep_aluno_edicao"></div>
+                                <input type="hidden" name="operacao" value="editar">
                                 <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_aluno">EDITAR</button></div>
                             </form>
                         </div>
