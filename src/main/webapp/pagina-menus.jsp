@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto">
-                            <form action="SearchAluno.do" method="post" style="background-color: rgb(241,247,252);">
+                            <form action="addDojo.do" method="post" style="background-color: rgb(241,247,252);">
                                 <div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_cadastro"></div>
                                 <div class="form-group"><input class="form-control" type="text" name="cnpj" placeholder="CNPJ" id="txb_cnpj_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex" type="text" name="telefone1" placeholder="Telefone 1" id="txb_telefone_dojo_cadastro"></div>
@@ -84,7 +84,7 @@
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cidade" placeholder="Cidade" id="txb_cidade_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="cep" placeholder="CEP" id="txb_cep_dojo_cadastro"></div>
                                 <input type="hidden" name="operacao" value="cadastrar">
-                                <div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_dojo">CADASTRAR</button></div>
+                                <div class="form-group text-center"><!-- button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_dojo" type="submit">CADASTRAR</button--><input type="submit" value="Submit" id="button-1"/></div>
                             </form>
                         </div>
                     </div>

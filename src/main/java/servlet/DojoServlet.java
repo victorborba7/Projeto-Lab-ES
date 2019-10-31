@@ -27,7 +27,7 @@ public class DojoServlet extends HttpServlet {
 		criarEntidade(ent, end, request);
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
-		
+		printaTudo(ent);
 		try {
 			entidade.createEntidade(ent);
 			response.getWriter().write("Cadastrado com sucesso");
@@ -54,4 +54,7 @@ public class DojoServlet extends HttpServlet {
 		entidade.setTelefone2(request.getParameter("telefone2"));
 	}
 	
+	private void printaTudo(Entidade ent) {
+		System.out.println(ent.toString());
+	}
 }
