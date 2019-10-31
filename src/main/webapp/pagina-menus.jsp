@@ -1,8 +1,4 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
-<<<<<<< HEAD
-
-=======
->>>>>>> 8fe5da091253ec58257f6a790979e2410599de35
 <!DOCTYPE html>
 <html>
 
@@ -62,10 +58,6 @@
                             <div>
                                 <h1 class="text-center" style="margin-bottom: 20px;" id="boas_vindas">Bem vindo</h1>
                             </div>
-<<<<<<< HEAD
-                            <p class="text-center" style="color: rgb(0,0,0);">Selecione no canto esquerdo a opção desejada</p>
-=======
->>>>>>> 8fe5da091253ec58257f6a790979e2410599de35
                         </div>
                     </div>
                     <div class="row text-center">
