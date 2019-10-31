@@ -75,8 +75,8 @@
                             <form action="SearchAluno.do" method="post" style="background-color: rgb(241,247,252);">
                                 <div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_cadastro"></div>
                                 <div class="form-group"><input class="form-control" type="text" name="cnpj" placeholder="CNPJ" id="txb_cnpj_dojo_cadastro"></div>
-                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex" type="text" name="telefone" placeholder="Telefone 1" id="txb_telefone_dojo_cadastro"></div>
-                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="telefone" placeholder="Telefone 2" id="txb_celular_dojo_cadastro"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex" type="text" name="telefone1" placeholder="Telefone 1" id="txb_telefone_dojo_cadastro"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="telefone2" placeholder="Telefone 2" id="txb_celular_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="rua" placeholder="Rua" id="txb_rua_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="numero" placeholder="NÃºmero" id="txb_numero_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="texl" name="bairro" placeholder="Bairro" id="txb_bairro_dojo_cadastro"></div>

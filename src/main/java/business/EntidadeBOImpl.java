@@ -15,11 +15,11 @@ public class EntidadeBOImpl implements EntidadeBO {
 		try {
 			dao.save(entidade);
 		} catch (IllegalArgumentException e) {
-			throw new IllegalArgumentException( "Ocorreu um erro ao cadastrar a entidade!"
+			throw new IllegalArgumentException( "Ocorreu um erro ao cadastrar o dojo!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar a entidade.");
+			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar o dojo.");
 		}
 	}
 
