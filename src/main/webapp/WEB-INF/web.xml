@@ -13,9 +13,20 @@
 		<servlet-name>DojoServlet</servlet-name>
 		<servlet-class>servlet.DojoServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>AlunoServlet</display-name>
+		<servlet-name>AlunoServlet</servlet-name>
+		<servlet-class>servlet.AlunoServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>DojoServlet</servlet-name>
 		<url-pattern>/addDojo.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AlunoServlet</servlet-name>
+		<url-pattern>/addAluno.do</url-pattern>
 	</servlet-mapping>
 
 	<welcome-file-list>
