@@ -8,46 +8,59 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import business.EntidadeBOImpl;
+import business.AlunoBOImpl;
+import model.bean.Aluno;
+import model.bean.Endereco;
 import model.bean.Entidade;
+import model.bean.Filiado;
+import model.bean.Professor;
 
 /**
  * Servlet implementation class SearchAluno
  */
 public class SearchAluno extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private EntidadeBOImpl entidade = new EntidadeBOImpl();
+	private AlunoBOImpl aluno = new AlunoBOImpl();
+	
 	
     /**
      * @see HttpServlet#HttpServlet()
      */
     public SearchAluno() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	Aluno a = new Aluno();
     	Entidade e = new Entidade();
-    	Entidade en = new Entidade();
+    	Endereco end = new Endereco();
+    	Filiado f = new Filiado();
+    	Professor p = new Professor();
+    	f.setId(1l);
+    	f.setEndereco(end);
+    	e.setEndereco(end);
     	e.setCnpj("123");
-    	e.setNome("Nome");
-    	e.setTelefone1("111");
-    	e.setTelefone2("222");
+    	e.setNome("nome");
+    	e.setTelefone1("11");
+    	e.setTelefone2("erw");
+    	a.setFiliado(f);
+    	a.setEntidade(e);
+    	a.setProfessor(p);
+    	p.setFiliado(f);
+    	//p.setEntidades(null);
+    	
     	try {
-			en = entidade.getEntidade(e);
-		} catch (Exception e3) {
-			e3.printStackTrace();
-		}
-    	try {
-			entidade.createEntidade(e);
+			aluno.createAluno(a);
 		} catch (Exception e1) {
+			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+    	
 		try {
-			request.setAttribute("alunos", entidade.searchEntidade(e).toString());
+			request.setAttribute("alunos", /*aluno.searchAluno(a).get(0).toString()*/"Cadastrou");
 		} catch (Exception e2) {
 			e2.printStackTrace();
 		}

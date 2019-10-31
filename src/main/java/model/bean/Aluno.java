@@ -1,8 +1,27 @@
 package model.bean;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "aluno")
 public class Aluno {
+	
+	@Id
+	@GeneratedValue
+	private Long aluno_id;
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	Filiado filiado;
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	Entidade entidade;
+	
+	@OneToOne(cascade=CascadeType.ALL)
 	Professor professor;
 	
 	public Filiado getFiliado() {
@@ -40,7 +59,7 @@ public class Aluno {
 	@Override
 	public int hashCode() {
 		int hash = 7;
-		return 29 * hash +(this.filiado.getId() != null ? (int)(long)this.filiado.getId() : 0);
+		return 29 * hash +(this.filiado.getId() != 0 ? (int)(long)this.filiado.getId() : 0);
 	}
 	
 	public void copyProperties(Aluno other){

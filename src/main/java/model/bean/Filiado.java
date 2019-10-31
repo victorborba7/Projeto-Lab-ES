@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -17,6 +18,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "filiado")
 public class Filiado {
+	public static Long qtd = 0L;
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
@@ -49,13 +51,13 @@ public class Filiado {
 	@Column
 	String observacoes;
 
-	@OneToOne(mappedBy="filiado",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+	@OneToOne(cascade=CascadeType.ALL)
 	Rg rg = new Rg();
 
-	@OneToOne(mappedBy="filiado",cascade=CascadeType.ALL,fetch = FetchType.LAZY)
+	@OneToOne(cascade=CascadeType.ALL)
 	Endereco endereco = new Endereco();
 	
-	@OneToMany(mappedBy="filiado")
+	@OneToMany(cascade=CascadeType.ALL)
 	List<Faixa> faixas = new ArrayList<Faixa>();
 	
 	public String toString(){
@@ -82,11 +84,11 @@ public class Filiado {
 		return (int)(long) filiado_id;
 	}
 	
-	public Long getId() {
+	public double getId() {
 		return filiado_id;
 	}
-	public void setId(Long id) {
-		this.filiado_id = id;
+	public void setId(Long qtd2) {
+		this.filiado_id = qtd2;
 	}
 	public String getNome() {
 		return nome;
@@ -112,12 +114,6 @@ public class Filiado {
 	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-	public Endereco getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
 	public String getTelefone1() {
 		return telefone1;
 	}
@@ -136,23 +132,29 @@ public class Filiado {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Rg getRg() {
-		return rg;
-	}
-	public void setRg(Rg rg) {
-		this.rg = rg;
-	}
 	public String getCpf() {
 		return cpf;
 	}
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 	public List<Faixa> getFaixas() {
 		return faixas;
 	}
 	public void setFaixas(List<Faixa> faixas) {
 		this.faixas = faixas;
+	}
+	public Rg getRg() {
+		return rg;
+	}
+	public void setRg(Rg rg) {
+		this.rg = rg;
 	}
 
 	public String getObservacoes() {
@@ -169,14 +171,31 @@ public class Filiado {
 		registroCbj = f.registroCbj;
 		dataNascimento = f.dataNascimento;
 		dataCadastro = f.dataCadastro;
-		endereco = f.endereco;
 		telefone1 = f.telefone1;
 		telefone2 = f.telefone2;
 		email = f.email;
-		rg = f.rg;
 		cpf = f.cpf;
 		observacoes = f.observacoes;
-		faixas.clear();
-		faixas.addAll(f.faixas);
 	}
+
+	public Filiado(Long filiado_id, String nome, String registroCbj, Date dataNascimento, Date dataCadastro,
+			String telefone1, String telefone2, String email, String cpf, String observacoes, Rg rg, Endereco endereco,
+			List<Faixa> faixas) {
+		super();
+		this.filiado_id = filiado_id;
+		this.nome = nome;
+		this.registroCbj = registroCbj;
+		this.dataNascimento = dataNascimento;
+		this.dataCadastro = dataCadastro;
+		this.telefone1 = telefone1;
+		this.telefone2 = telefone2;
+		this.email = email;
+		this.cpf = cpf;
+		this.observacoes = observacoes;
+		this.rg = rg;
+		this.endereco = endereco;
+		this.faixas = faixas;
+	}
+	
+	public Filiado() {}
 }

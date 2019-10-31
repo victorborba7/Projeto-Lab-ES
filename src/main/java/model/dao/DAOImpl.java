@@ -34,12 +34,15 @@ public class DAOImpl<E> implements DAO<E> {
 	}
 	
 	public List<E> search(E object) {
-		List<E> objects = em.createQuery("SELECT * FROM clazz").getResultList();
+		List<E> objects = em.createQuery("SELECT c FROM aluno c").getResultList();
 		return objects;		
 	}
 
-    public void save(E object) throws IllegalArgumentException {
-    	em.persist(object);
+    public void save(E object){
+    	em.getTransaction().begin();
+    	em.merge(object);
+    	em.flush();
+    	em.getTransaction().commit();
     }
 
     public void delete(E object) throws IllegalArgumentException {

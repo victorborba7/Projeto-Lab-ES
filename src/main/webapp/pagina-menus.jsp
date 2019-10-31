@@ -1,10 +1,13 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8fe5da091253ec58257f6a790979e2410599de35
 <!DOCTYPE html>
 <html>
 
 <head>
-    <meta charset="utf-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>pagina menus</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
@@ -24,7 +27,6 @@
         <li class="sidebar-brand"><a href="#" onclick="judocas()">JUDOCAS</a></li>
         <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                            <i class=""></i>
                             Dojos
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -34,7 +36,6 @@
                     </li>
         <li class="active">
                         <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false">
-                            <i class=""></i>
                             Professores
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu2">
@@ -44,7 +45,6 @@
                     </li>
         <li class="active">
                         <a href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false">
-                            <i class=""></i>
                             Alunos
                         </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu3">
@@ -62,11 +62,14 @@
                             <div>
                                 <h1 class="text-center" style="margin-bottom: 20px;" id="boas_vindas">Bem vindo</h1>
                             </div>
+<<<<<<< HEAD
                             <p class="text-center" style="color: rgb(0,0,0);">Selecione no canto esquerdo a opção desejada</p>
+=======
+>>>>>>> 8fe5da091253ec58257f6a790979e2410599de35
                         </div>
                     </div>
                     <div class="row text-center">
-                        <div class="col"><img src="assets/img/pagina_inicial.png" height="500px" width="75%" style="filter: blur(0px) contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%);"></div>
+                        <div class="col" style="margin-top: 100px;"><img src="assets/img/pagina_inicial.png" height="500px" width="75%" style="filter: blur(0px) contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%);"></div>
                     </div>
                 </div>
                 <div id="cadastrar_dojo" style="display: none;width: 100%;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-dojo" href="#menu-toggle2"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>

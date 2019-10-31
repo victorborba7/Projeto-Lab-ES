@@ -68,7 +68,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 		try {
 			enti = dao.get(entidade);
 		} catch (IllegalArgumentException e) {
-			throw new IllegalArgumentException( "Ocorreu um erro ao atualizar a entidade!"
+			throw new IllegalArgumentException( "Ocorreu um erro ao buscar a entidade!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
 			e.printStackTrace();

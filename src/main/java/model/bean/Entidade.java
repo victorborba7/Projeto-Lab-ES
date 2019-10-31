@@ -1,5 +1,6 @@
 package model.bean;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Entidade {
 	@Column
 	String telefone2;
 
-	@OneToOne(mappedBy = "entidade")
+	@OneToOne(cascade=CascadeType.ALL)
 	Endereco endereco;
 	
 	@Override

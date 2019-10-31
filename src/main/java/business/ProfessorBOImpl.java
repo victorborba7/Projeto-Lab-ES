@@ -1,10 +1,11 @@
 package business;
 
 import java.util.List;
+
+import model.bean.Filiado;
 import model.bean.Professor;
 import model.dao.DAO;
 import model.dao.DAOImpl;
-import util.FiliadoID;
 
 public class ProfessorBOImpl implements ProfessorBO {
 	
@@ -14,7 +15,7 @@ public class ProfessorBOImpl implements ProfessorBO {
 
 	public void createProfessor(Professor professor) throws Exception {
 		try {
-			professor.getFiliado().setId(FiliadoID.getNextID());
+			professor.getFiliado().setId(Filiado.qtd);
 			dao.save(professor);
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao cadastrar o professor!"

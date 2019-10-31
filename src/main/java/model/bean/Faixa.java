@@ -1,13 +1,13 @@
 package model.bean;
 
-import java.util.Date;
+
+
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import util.CorFaixa;
@@ -24,17 +24,13 @@ public class Faixa {
 	CorFaixa cor;
 	
 	@Column
-	Date dataEntrega;
-	
-	@ManyToOne
-	@JoinColumn(name="filiado_id")
-	private Filiado filiado;
+	LocalDateTime dataEntrega;
 	
 	public Faixa() {
 		super();
 	}
 
-	public Faixa(CorFaixa cor, Date dataEntrega) {
+	public Faixa(CorFaixa cor, LocalDateTime dataEntrega) {
 		super();
 		this.cor = cor;
 		this.dataEntrega = dataEntrega;
@@ -47,10 +43,10 @@ public class Faixa {
 	public void setCor(CorFaixa cor) {
 		this.cor = cor;
 	}
-	public Date getDataEntrega() {
+	public LocalDateTime getDataEntrega() {
 		return dataEntrega;
 	}
-	public void setDataEntrega(Date dataEntrega) {
+	public void setDataEntrega(LocalDateTime dataEntrega) {
 		this.dataEntrega = dataEntrega;
 	}
 	
@@ -65,14 +61,6 @@ public class Faixa {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Filiado getFiliado() {
-		return filiado;
-	}
-
-	public void setFiliado(Filiado filiado) {
-		this.filiado = filiado;
 	}
 	
 }

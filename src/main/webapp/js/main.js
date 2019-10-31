@@ -1,18 +1,21 @@
 $(document).ready(function(){
+	
+	$("#boas_vindas").html($("#boas_vindas").html() + " " + window.localStorage.getItem("username"));
+	
 	$("#btn_adm_nome_dojo_busca").click(function(){
-		controlarCamposDesabilitadosDojos(false);
 		if($("#txb_adm_nome_dojo_busca").val() == ""){
-			swal("Ops!!", "Favor Inserir o nome do dojo no campo de busca!");
+			swal("Ops!!", "Favor Inserir o nome do dojo no campo de busca!", "error");
 		}else{
+			controlarCamposDesabilitadosDojos(false);
 			//Ajax de busca do dojo
 		}
 	});
 	
 	$("#btn_adm_nome_aluno_busca").click(function(){
-		controlarCamposDesabilitadosAlunos(false);
 		if($("#txb_adm_nome_aluno_busca").val() == ""){
-			swal("Ops!!", "Favor Inserir o nome do aluno no campo de busca!");
+			swal("Ops!!", "Favor Inserir o nome do aluno no campo de busca!", "error");
 		}else{
+			controlarCamposDesabilitadosAlunos(false);
 			//Ajax de busca do aluno
 		}
 	});
@@ -31,7 +34,7 @@ $(document).ready(function(){
 		var cep = $("#txb_cep_aluno_cadastro").val();
 		
 		if(nome == "" || cbj == "" || rg == "" || cpf == "" || celular == "" || rua == "" || numero == "" || bairro == "" || cidade == "" || estado == "" || cep == ""){
-			swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!");
+			swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!", "error");
 		}else{
 			var obj = { nome: nome,
 					cbj: cbj,
@@ -45,6 +48,8 @@ $(document).ready(function(){
 					estado: estado,
 					cep: cep };
 			var json = JSON.stringify(obj);
+			swal("Yahuu!!", "Aluno " + nome + " cadastrado com sucesso!", "success");
+			limparCampos();
 			//Ajax de cadastro do aluno
 		}
 	});
@@ -62,7 +67,7 @@ $(document).ready(function(){
 		 var cep = $("#txb_cep_dojo_cadastro").val();
 		 
 		 if(nome == "" || cnpj == "" || telefone == "" || celular == "" || rua == "" || numero == "" || bairro == "" || cidade == "" || estado == "" || cep == ""){
-				swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!");
+				swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!", "error");
 		 }else{
 			 var obj = { nome: nome,
 						cnpj: cnpj,
@@ -75,6 +80,8 @@ $(document).ready(function(){
 						estado: estado,
 						cep: cep };
 				var json = JSON.stringify(obj);
+				swal("Yahuu!!", "Dojo " + nome + " cadastrado com sucesso!", "success");
+				limparCampos();
 				//Ajax de cadastro do dojo
 		 }
 	});
@@ -92,7 +99,7 @@ $(document).ready(function(){
 		 var cep = $("#txb_cep_dojo_edicao").val();
 		 
 		 if(nome == "" || cnpj == "" || telefone == "" || celular == "" || rua == "" || numero == "" || bairro == "" || cidade == "" || estado == "" || cep == ""){
-				swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!");
+				swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!", "error");
 		 }else{
 			 var obj = { nome: nome,
 						cnpj: cnpj,
@@ -105,6 +112,8 @@ $(document).ready(function(){
 						estado: estado,
 						cep: cep };
 				var json = JSON.stringify(obj);
+				swal("Yahuu!!", "Dojo " + nome + " editado com sucesso!", "success");
+				limparCampos();
 				//Ajax de edicao do dojo
 		 }
 	});
@@ -123,7 +132,7 @@ $(document).ready(function(){
 		var cep = $("#txb_cep_aluno_edicao").val();
 		
 		if(nome == "" || cbj == "" || rg == "" || cpf == "" || celular == "" || rua == "" || numero == "" || bairro == "" || cidade == "" || estado == "" || cep == ""){
-			swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!");
+			swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!", "error");
 		}else{
 			var obj = { nome: nome,
 					cbj: cbj,
@@ -137,6 +146,8 @@ $(document).ready(function(){
 					estado: estado,
 					cep: cep };
 			var json = JSON.stringify(obj);
+			swal("Yahuu!!", "Aluno " + nome + " editado com sucesso!", "success");
+			limparCampos();
 			//Ajax de edicao do aluno
 		}
 	});

@@ -2,11 +2,8 @@ package model.bean;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -33,14 +30,6 @@ public class Endereco {
 	
 	@Column
 	String cep;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "filiado_id")
-	private Filiado filiado;
-	
-	@OneToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "entidade_id")
-	private Entidade entidade;
 	
 	@Override
 	public String toString(){
@@ -97,12 +86,12 @@ public class Endereco {
 		this.id = id;
 	}
 
-	public Filiado getFiliado() {
-		return filiado;
-	}
-
-	public void setFiliado(Filiado filiado) {
-		this.filiado = filiado;
+	
+	public void copyProperties(Endereco other){
+		this.bairro = other.getBairro();
+		this.cep = other.getCep();
+		this.cidade = other.getCidade();
+		this.estado = other.getEstado();
 	}
 	
 }
