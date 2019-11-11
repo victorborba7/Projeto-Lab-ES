@@ -128,6 +128,24 @@
                                 <h1 class="text-center" style="margin-bottom: 20px;">CADASTRAR PROFESSOR</h1>
                             </div>
                         </div>
+						<div class="col-xl-11 m-auto">
+                            <form style="background-color: rgb(241,247,252);">
+                                <div class="form-group"><input class="form-control" type="text" name="nome_professor" placeholder="Nome do professor" id="txb_nome_professor_cadastro"></div>
+								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_professor"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="registro_cbj" placeholder="Registro CBJ" id="txb_registro_cbj_professor_cadastro"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="rg" placeholder="RG" id="txb_rg_professor_cadastro"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cpf" placeholder="CPF" id="txb_cpf_professor_cadastro"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="celular_professor" placeholder="Celular" id="txb_celular_professor_cadastro"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="rua_professor" placeholder="Rua" id="txb_rua_professor_cadastro"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="numero_professor" placeholder="Número" id="txb_numero_professor_cadastro"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="bairro_professor" placeholder="Bairro" id="txb_bairro_professor_cadastro"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="estado_professor" placeholder="Estado" id="txb_estado_professor_cadastro"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cidade_professor" placeholder="Cidade" id="txb_cidade_professor_cadastro"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="cep_professor" placeholder="CEP" id="txb_cep_professor_cadastro"></div>
+                                <input type="hidden" name="operacao" value="cadastrar">
+                                <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_professor">CADASTRAR</button></div>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div id="administrar_professor" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-administrar-professor" href="#menu-toggle-administrar-professor"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
@@ -136,6 +154,32 @@
                             <div>
                                 <h1 class="text-center" style="margin-bottom: 20px;">ADMINISTRAR PROFESSOR</h1>
                             </div>
+                        </div>
+						<div class="col-xl-11 m-auto" style="filter: blur(0px);">
+                            <form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;">
+                                <div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_professor_buscar" placeholder="Nome do professor" id="txb_adm_nome_professor_busca"></div>
+                                <input type="hidden" name="operacao" value="buscar">
+                                <div class="form-group text-center d-inline-block float-none" style="margin-left: 15px;"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_professor_busca">BUSCAR</button></div>
+                            </form>
+                        </div>
+						<div class="col-xl-11 m-auto">
+                            <form style="background-color: rgb(241,247,252);">
+                                <div class="form-group"><input class="form-control professor_edicao" type="text" name="nome_dojo" placeholder="Nome do professor" disabled="true" id="txb_nome_professor_edicao"></div>
+								<div class="form-group"><input class="form-control" type="text" name="nome_professor_professor" placeholder="Nome do professor do professor" disabled="true"  id="txb_nome_professor_professor_edicao"></div>
+								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_professor_edicao"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="registro_cbj" placeholder="Registro CBJ" disabled="true" id="txb_registro_cbj_professor_edicao"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="rg" placeholder="RG" disabled="true" id="txb_rg_professor_edicao"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cpf" placeholder="CPF" disabled="true" id="txb_cpf_professor_edicao"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="celular_professor" placeholder="Celular" disabled="true" id="txb_celular_professor_edicao"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="rua_professor" placeholder="Rua" disabled="true" id="txb_rua_professor_edicao"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="numero_professor" placeholder="Número" disabled="true" id="txb_numero_professor_edicao"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="bairro_professor" placeholder="Bairro" disabled="true" id="txb_bairro_professor_edicao"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="estado_professor" placeholder="Estado" disabled="true" id="txb_estado_professor_edicao"></div>
+                                <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cidade_professor" placeholder="Cidade" disabled="true" id="txb_cidade_professor_edicao"></div>
+                                <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cep_professor" placeholder="CEP" disabled="true" id="txb_cep_professor_edicao"></div>
+                                <input type="hidden" name="operacao" value="editar">
+                                <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_professor">EDITAR</button></div>
+                            </form>
                         </div>
                     </div>
                 </div>
