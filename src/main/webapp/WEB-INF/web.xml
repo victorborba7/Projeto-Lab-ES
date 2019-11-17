@@ -20,6 +20,13 @@
 		<servlet-name>AlunoServlet</servlet-name>
 		<servlet-class>servlet.AlunoServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ProfessorServlet</display-name>
+		<servlet-name>ProfessorServlet</servlet-name>
+		<servlet-class>servlet.ProfessorServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>DojoServlet</servlet-name>
 		<url-pattern>/addDojo.do</url-pattern>
@@ -36,7 +43,10 @@
 		<servlet-name>AlunoServlet</servlet-name>
 		<url-pattern>/addAluno.do</url-pattern>
 	</servlet-mapping>
-
+	<servlet-mapping>
+		<servlet-name>ProfessorServlet</servlet-name>
+		<url-pattern>/addProfessor.do</url-pattern>
+	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

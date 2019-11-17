@@ -49,13 +49,13 @@ public class Professor {
 		this.filiado = filiado;
 	}
 	
-	/*public List<Entidade> getEntidades() {
+	public List<Entidade> getEntidades() {
 		return entidades;
 	}
 	
 	public void setEntidades(List<Entidade> entidades) {
 		this.entidades = entidades;
-	}*/
+	}
 	
 	public String toString(){
 		return this.filiado.getNome();

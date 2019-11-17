@@ -66,4 +66,19 @@ public class ProfessorBOImpl implements ProfessorBO {
 		}
 		return result;
 	}
+	
+	public Professor getProfessor(String name) throws Exception{
+		Professor prof;
+		try {
+			prof = dao.get(name);
+		} catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException( "Ocorreu um erro ao buscar a entidade!"
+				+ " Verifique se todos os dados foram preenchidos corretamente.");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar a entidade.");
+		}
+		return prof;
+	}
+	
 }

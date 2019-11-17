@@ -132,7 +132,7 @@
                             </div>
                         </div>
 						<div class="col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);">
+                            <form style="background-color: rgb(241,247,252);" action="addProfessor.do" method="post">
                                 <div class="form-group"><input class="form-control" type="text" name="nome_professor" placeholder="Nome do professor" id="txb_nome_professor_cadastro"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_professor"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="registro_cbj" placeholder="Registro CBJ" id="txb_registro_cbj_professor_cadastro"></div>
