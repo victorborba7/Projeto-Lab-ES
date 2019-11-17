@@ -106,7 +106,7 @@
 							</form>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-12 col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);" action=".do" method="get">
+                            <form style="background-color: rgb(241,247,252);" action="updateDojo.do" method="post">
                                 <div class="form-group"><input class="form-control dojo_edicao" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true" id="txb_nome_dojo_edicao"></div>
                                 <div class="form-group"><input class="form-control dojo_edicao" type="text" name="cnpj" placeholder="CNPJ" disabled="true" id="txb_cnpj_dojo_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex dojo_edicao" type="text" name="telefone" placeholder="Telefone 1" disabled="true" id="txb_telefone_dojo_edicao"></div>

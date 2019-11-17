@@ -76,4 +76,13 @@ public class EntidadeBOImpl implements EntidadeBO {
 		}
 		return enti;
 	}
+	
+	public void remove(String name) throws Exception {
+		try {
+			dao.delete(getEntidade(name));
+		} catch(IllegalArgumentException e) {
+			throw new IllegalArgumentException( "Ocorreu um erro ao buscar a entidade!"
+					+ " Verifique se todos os dados foram preenchidos corretamente.");
+		}
+	}
 }

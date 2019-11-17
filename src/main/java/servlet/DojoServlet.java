@@ -30,6 +30,9 @@ public class DojoServlet extends HttpServlet {
 		case "buscar":
 			searchDojo(request, response);
 			break;
+		case "editar":
+			updateDojo(request, response);
+			break;
 		}
 		
 	}
@@ -59,6 +62,7 @@ public class DojoServlet extends HttpServlet {
 		Entidade ent = new Entidade();
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
+		System.out.println(request.getParameter("nome_dojo_buscar"));
 		try {
 			ent = entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
 			response.getWriter().write("Dojo: " + printaTudo(ent));
@@ -66,5 +70,20 @@ public class DojoServlet extends HttpServlet {
 			e.printStackTrace();
 			response.getWriter().write("Não foi possivel realizar o cadastro");
 		}
+	}
+	
+	private void updateDojo(HttpServletRequest request, HttpServletResponse response) {
+		Entidade ent = new Entidade();
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			//ent = entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
+			ent = entidade.getEntidade("Teste Dojo 1");
+			ent.setCnpj("6564654645");
+			entidade.updateEntidade(ent);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 }

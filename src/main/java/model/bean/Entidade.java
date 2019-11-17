@@ -81,7 +81,7 @@ public class Entidade {
 
 	@Override
 	public String toString(){
-		return "Dojo=[Nome: " + this.nome + "; CNPJ: " + this.cnpj + "; Endereço: " + this.getEndereco().toString() + "]";
+		return "Dojo=[ID: " + this.entidade_id + "; Nome: " + this.nome + "; CNPJ: " + this.cnpj + "; Endereço: " + this.getEndereco().toString() + "]";
 	}
 
 	public void copyProperties(Entidade entidade) {
