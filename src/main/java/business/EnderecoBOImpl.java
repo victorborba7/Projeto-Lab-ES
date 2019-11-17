@@ -24,11 +24,7 @@ public class EnderecoBOImpl implements EnderecoBO {
 
 	public void updateEndereco(Endereco endereco) throws Exception{
 		try {
-			Endereco old = null;
-			old = dao.get(endereco);
-			if(old!=null){		
-				old.copyProperties(endereco);
-			}
+			dao.save(endereco);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 			throw new IllegalArgumentException( "Ocorreu um erro ao salvar os dados do endereco."
@@ -69,7 +65,7 @@ public class EnderecoBOImpl implements EnderecoBO {
 		return result;
 	}
 	
-	public Endereco getEndereco(Endereco endereco) throws Exception{
+	public Endereco getEndereco(String endereco) throws Exception{
 		Endereco end;
 		try {
 			end = dao.get(endereco);

@@ -26,11 +26,7 @@ public class AlunoBOImpl implements AlunoBO {
 
 	public void updateAluno(Aluno aluno) throws Exception{
 		try {
-			Aluno old = null;
-			old = dao.get(aluno);
-			if(old!=null){		
-				old.copyProperties(aluno);
-			}
+			dao.save(aluno);
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 			throw new IllegalArgumentException( "Ocorreu um erro ao update os dados do aluno."
