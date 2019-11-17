@@ -13,7 +13,7 @@ public interface DAO<E> {
 	public abstract List<E> list()
 	throws IllegalArgumentException;
 
-	public abstract E get(E object)
+	public abstract E get(String name)
 	throws IllegalArgumentException;
 
 	public abstract List<E> search(E object)

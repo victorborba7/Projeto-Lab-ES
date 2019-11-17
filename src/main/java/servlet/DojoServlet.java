@@ -17,14 +17,32 @@ import model.bean.Entidade;
 public class DojoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private EntidadeBOImpl entidade = new EntidadeBOImpl();
+	private ServletUtil util = new ServletUtil();
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		switch(request.getParameter("operacao")) {
+		case "cadastrar":
+			addDojo(request, response);
+			break;
+		case "buscar":
+			searchDojo(request, response);
+			break;
+		}
+		
+	}
+	
+	private void printaTudo(Entidade ent) {
+		System.out.println(ent.toString());
+	}
+	
+	private void addDojo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Entidade ent = new Entidade();
 		Endereco end = new Endereco();
-		criarEndereco(end, request);
-		criarEntidade(ent, end, request);
+		util.criarEndereco(end, request);
+		util.criarEntidade(ent, end, request);
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		printaTudo(ent);
@@ -37,24 +55,17 @@ public class DojoServlet extends HttpServlet {
 		}
 	}
 	
-	private void criarEndereco(Endereco endereco, HttpServletRequest request) {
-		endereco.setBairro(request.getParameter("bairro"));
-		endereco.setCep(request.getParameter("cep"));
-		endereco.setCidade(request.getParameter("cidade"));
-		endereco.setEstado(request.getParameter("estado"));
-		endereco.setNumero(request.getParameter("numero"));
-		endereco.setRua(request.getParameter("rua"));
-	}
-
-	private void criarEntidade(Entidade entidade, Endereco endereco, HttpServletRequest request) {
-		entidade.setCnpj(request.getParameter("cnpj"));
-		entidade.setEndereco(endereco);
-		entidade.setNome(request.getParameter("nome_dojo"));
-		entidade.setTelefone1(request.getParameter("telefone1"));
-		entidade.setTelefone2(request.getParameter("telefone2"));
-	}
-	
-	private void printaTudo(Entidade ent) {
-		System.out.println(ent.toString());
+	private void searchDojo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		Entidade ent = new Entidade();
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		printaTudo(ent);
+		try {
+			entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
+			response.getWriter().write("Nome do Dojo:" + request.getParameter("nome_dojo_buscar"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.getWriter().write("Não foi possivel realizar o cadastro");
+		}
 	}
 }

@@ -84,7 +84,8 @@
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cidade" placeholder="Cidade" id="txb_cidade_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="cep" placeholder="CEP" id="txb_cep_dojo_cadastro"></div>
                                 <input type="hidden" name="operacao" value="cadastrar">
-                                <div class="form-group text-center"><!-- button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_dojo" type="submit">CADASTRAR</button--><input type="submit" value="Submit" id="button-1"/></div>
+                                <div class="form-group d-inline-block"><input  class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dpjo_busca" type="submit" value="CADASTRAR"/></div>
+                                <!-- <div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_dojo" type="submit">CADASTRAR</button></div>-->
                             </form>
                         </div>
                     </div>
@@ -97,14 +98,15 @@
                             </div>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto" style="filter: blur(0px);">
-                        	<form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;">
+                        	<form action="searchDojo.do" method="post" style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;">
 								<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_dojo_buscar" placeholder="Nome do dojo" id="txb_adm_nome_dojo_busca"></div>
-								<input type="hidden" name="operacao" value="editar">
-								<div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dojo_busca">BUSCAR</button></div>
+								<input type="hidden" name="operacao" value="buscar">
+								<div class="form-group text-center d-inline-block"><input class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dpjo_busca" type="submit" value="BUSCAR"/></div>
+						   <!-- <div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dojo_busca">BUSCAR</button></div>-->
 							</form>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-12 col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);" action="SearchAluno.do" method="get">
+                            <form style="background-color: rgb(241,247,252);" action=".do" method="get">
                                 <div class="form-group"><input class="form-control dojo_edicao" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true" id="txb_nome_dojo_edicao"></div>
                                 <div class="form-group"><input class="form-control dojo_edicao" type="text" name="cnpj" placeholder="CNPJ" disabled="true" id="txb_cnpj_dojo_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex dojo_edicao" type="text" name="telefone" placeholder="Telefone 1" disabled="true" id="txb_telefone_dojo_edicao"></div>
@@ -116,7 +118,8 @@
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="cidade" placeholder="Cidade" disabled="true" id="txb_cidade_dojo_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control dojo_edicao" type="text" name="cep" placeholder="CEP" disabled="true" id="txb_cep_dojo_edicao"></div>
                                 <input type="hidden" name="operacao" value="editar">
-                                <div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_dojo">EDITAR</button></div>
+                                <div class="form-group d-inline-block"><input  class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dpjo_busca" type="submit" value="EDITAR"/></div>
+                                <!-- <div class="form-group text-center"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_dojo">EDITAR</button></div>-->
                             </form>
                         </div>
                     </div>

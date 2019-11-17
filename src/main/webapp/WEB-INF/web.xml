@@ -25,6 +25,10 @@
 		<url-pattern>/addDojo.do</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
+		<servlet-name>DojoServlet</servlet-name>
+		<url-pattern>/searchDojo.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
 		<servlet-name>AlunoServlet</servlet-name>
 		<url-pattern>/addAluno.do</url-pattern>
 	</servlet-mapping>

@@ -50,7 +50,8 @@ public class DAOImpl<E> implements DAO<E> {
         em.remove(newE);
     }
 
-    public E get(E object) throws IllegalArgumentException {
-    	return em.find(clazz, object);
+    @SuppressWarnings("unchecked")
+	public E get(String name) throws IllegalArgumentException {
+    	return (E) em.createNamedQuery("name", clazz).setParameter("name", name).getSingleResult();
     }
 }

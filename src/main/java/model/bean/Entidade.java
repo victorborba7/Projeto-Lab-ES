@@ -5,11 +5,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "entidade")
+@NamedQuery(name = "name", query = "SELECT e FROM Entidade e WHERE e.nome = :name")
 public class Entidade {
 	
 	@Id

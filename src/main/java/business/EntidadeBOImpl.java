@@ -63,10 +63,10 @@ public class EntidadeBOImpl implements EntidadeBO {
 		}
 	}
 	
-	public Entidade getEntidade(Entidade entidade) throws Exception{
+	public Entidade getEntidade(String name) throws Exception{
 		Entidade enti;
 		try {
-			enti = dao.get(entidade);
+			enti = dao.get(name);
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao buscar a entidade!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
