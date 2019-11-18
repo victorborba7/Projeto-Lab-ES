@@ -29,39 +29,15 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DojoServlet</servlet-name>
-		<url-pattern>/addDojo.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>DojoServlet</servlet-name>
-		<url-pattern>/searchDojo.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>DojoServlet</servlet-name>
-		<url-pattern>/updateDojo.do</url-pattern>
+		<url-pattern>/dojo/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>ProfessorServlet</servlet-name>
-		<url-pattern>/addProfessor.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>ProfessorServlet</servlet-name>
-		<url-pattern>/searchProfessor.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>ProfessorServlet</servlet-name>
-		<url-pattern>/updateProfessor.do</url-pattern>
+		<url-pattern>/professor/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>AlunoServlet</servlet-name>
-		<url-pattern>/addAluno.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>AlunoServlet</servlet-name>
-		<url-pattern>/searchAluno.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>AlunoServlet</servlet-name>
-		<url-pattern>/updateAluno.do</url-pattern>
+		<url-pattern>/aluno/*</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

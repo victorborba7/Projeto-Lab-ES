@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto">
-                            <form action="addDojo.do" method="post" style="background-color: rgb(241,247,252);">
+                            <form action="dojo/add.do" method="post" style="background-color: rgb(241,247,252);">
                                 <div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_cadastro"></div>
                                 <div class="form-group"><input class="form-control" type="text" name="cnpj" placeholder="CNPJ" id="txb_cnpj_dojo_cadastro"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex" type="text" name="telefone1" placeholder="Telefone 1" id="txb_telefone_dojo_cadastro"></div>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto" style="filter: blur(0px);">
-                        	<form action="searchDojo.do" method="post" style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;">
+                        	<form action="dojo/search.do" method="post" style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;">
 								<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_dojo_buscar" placeholder="Nome do dojo" id="txb_adm_nome_dojo_busca"></div>
 								<input type="hidden" name="operacao" value="buscar">
 								<div class="form-group text-center d-inline-block"><input class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_dpjo_busca" type="submit" value="BUSCAR"/></div>
@@ -106,7 +106,7 @@
 							</form>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-12 col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);" action="updateDojo.do" method="post">
+                            <form style="background-color: rgb(241,247,252);" action="dojo/update.do" method="post">
                                 <div class="form-group"><input class="form-control dojo_edicao" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true" id="txb_nome_dojo_edicao"></div>
                                 <div class="form-group"><input class="form-control dojo_edicao" type="text" name="cnpj" placeholder="CNPJ" disabled="true" id="txb_cnpj_dojo_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control d-xl-flex dojo_edicao" type="text" name="telefone" placeholder="Telefone 1" disabled="true" id="txb_telefone_dojo_edicao"></div>
@@ -132,7 +132,7 @@
                             </div>
                         </div>
 						<div class="col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);" action="addProfessor.do" method="post">
+                            <form style="background-color: rgb(241,247,252);" action="professor/add.do" method="post">
                                 <div class="form-group"><input class="form-control" type="text" name="nome" placeholder="Nome do professor" id="txb_nome_professor_cadastro"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_professor"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="registro_cbj" placeholder="Registro CBJ" id="txb_registro_cbj_professor_cadastro"></div>
@@ -160,7 +160,7 @@
                             </div>
                         </div>
 						<div class="col-xl-11 m-auto" style="filter: blur(0px);">
-                            <form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;" action="searchProfessor.do" method="post">
+                            <form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;" action="professor/search.do" method="post">
                                 <div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_professor_buscar" placeholder="Nome do professor" id="txb_adm_nome_professor_busca"></div>
                                 <input type="hidden" name="operacao" value="buscar">
                                 <div class="form-group text-center d-inline-block float-none" style="margin-left: 15px;"><input  class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_professor_busca" type="submit" value="BUSCAR"/></div>
@@ -168,7 +168,7 @@
                             </form>
                         </div>
 						<div class="col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);" action="updateProfessor.do" method="post">
+                            <form style="background-color: rgb(241,247,252);" action="professor/update.do" method="post">
                                 <div class="form-group"><input class="form-control professor_edicao" type="text" name="nome_dojo" placeholder="Nome do professor" disabled="true" id="txb_nome_professor_edicao"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_professor_professor" placeholder="Nome do professor do professor" disabled="true"  id="txb_nome_professor_professor_edicao"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_professor_edicao"></div>
@@ -197,7 +197,7 @@
                             </div>
                         </div>
                         <div class="col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);" action="addAluno.do" method="post">
+                            <form style="background-color: rgb(241,247,252);" action="aluno/add.do" method="post">
                                 <div class="form-group"><input class="form-control" type="text" name="nome" placeholder="Nome do aluno" id="txb_nome_aluno_cadastro"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_professor" placeholder="Nome do professor do aluno" id="txb_nome_professor_aluno"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_aluno"></div>
@@ -226,7 +226,7 @@
                             </div>
                         </div>
                         <div class="col-xl-11 m-auto" style="filter: blur(0px);">
-                            <form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;" action="searchAluno.do" method="post">
+                            <form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;" action="aluno/search.do" method="post">
                                 <div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_aluno_buscar" placeholder="Nome do aluno" id="txb_adm_nome_aluno_busca"></div>
                                 <input type="hidden" name="operacao" value="buscar">
                                 <div class="form-group text-center d-inline-block float-none" style="margin-left: 15px;"><input class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_aluno_busca" type="submit" value="BUSCAR"/></div>
@@ -234,7 +234,7 @@
                             </form>
                         </div>
                         <div class="col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);" action="updateAluno.do" method="post">
+                            <form style="background-color: rgb(241,247,252);" action="aluno/update.do" method="post">
                                 <div class="form-group"><input class="form-control aluno_edicao" type="text" name="nome_dojo" placeholder="Nome do aluno" disabled="true" id="txb_nome_aluno_edicao"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_professor_aluno" placeholder="Nome do professor do aluno" disabled="true"  id="txb_nome_professor_aluno_edicao"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_aluno_edicao"></div>
