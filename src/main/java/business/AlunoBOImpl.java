@@ -12,7 +12,6 @@ public class AlunoBOImpl implements AlunoBO {
 	private static DAO<Filiado> daoF = new DAOImpl<Filiado>(Filiado.class);
 
 	public void createAluno(Aluno aluno) throws Exception {
-		System.out.println("AlunoBOImpl.createAluno()");
 		try {
 			dao.save(aluno);
 		} catch (IllegalArgumentException e) {
