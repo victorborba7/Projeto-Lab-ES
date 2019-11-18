@@ -65,11 +65,14 @@ public class AlunoServlet extends HttpServlet {
 	
 	private void updateAluno(HttpServletRequest request, HttpServletResponse response) {
 		Aluno a = new Aluno();
+		Aluno newAluno = new Aluno();
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
-			a = aluno.getAluno("Aluno Teste 1");
-			aluno.updateAluno(a);
+			newAluno = aluno.getAluno(request.getParameter("nome_aluno"));
+			a = util.criarAluno(request);
+			newAluno.copyProperties(a);
+			aluno.updateAluno(newAluno);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
