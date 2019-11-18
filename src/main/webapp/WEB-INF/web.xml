@@ -40,10 +40,6 @@
 		<url-pattern>/updateDojo.do</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
-		<servlet-name>AlunoServlet</servlet-name>
-		<url-pattern>/addAluno.do</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
 		<servlet-name>ProfessorServlet</servlet-name>
 		<url-pattern>/addProfessor.do</url-pattern>
 	</servlet-mapping>
@@ -54,6 +50,18 @@
 	<servlet-mapping>
 		<servlet-name>ProfessorServlet</servlet-name>
 		<url-pattern>/updateProfessor.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AlunoServlet</servlet-name>
+		<url-pattern>/addAluno.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AlunoServlet</servlet-name>
+		<url-pattern>/searchAluno.do</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AlunoServlet</servlet-name>
+		<url-pattern>/updateAluno.do</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>

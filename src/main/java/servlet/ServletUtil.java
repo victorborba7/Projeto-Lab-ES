@@ -10,6 +10,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import business.EntidadeBOImpl;
+import business.ProfessorBOImpl;
 import model.bean.Aluno;
 import model.bean.Endereco;
 import model.bean.Entidade;
@@ -22,6 +23,7 @@ import model.bean.Professor;
  */
 public class ServletUtil {
 	private EntidadeBOImpl entidade = new EntidadeBOImpl();
+	private ProfessorBOImpl professor = new ProfessorBOImpl();
 	
 	public Endereco criarEndereco(HttpServletRequest request) {
 		Endereco endereco = new Endereco();
@@ -81,12 +83,15 @@ public class ServletUtil {
 	
 	public Aluno criarAluno(HttpServletRequest request) {
 		Aluno aluno = new Aluno();
-		Entidade ent = null;
-		Professor prof = null;
-		aluno.setEntidade(ent);
-		aluno.setProfessor(prof);
-		aluno.setFiliado(criarFiliado(request));
-		return aluno;
+		try {
+			aluno.setEntidade(entidade.getEntidade(request.getParameter("nome_dojo")));
+			aluno.setProfessor(professor.getProfessor(request.getParameter("nome_professor")));
+			aluno.setFiliado(criarFiliado(request));
+			return aluno;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	public String printaTudo(Object O) {

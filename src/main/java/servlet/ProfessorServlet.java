@@ -68,7 +68,6 @@ public class ProfessorServlet extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
-			//ent = entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
 			//prof = professor.getProfessor(request.getParameter(""));
 			prof = professor.getProfessor("Professor Teste 1");
 			professor.updateProfessor(prof);

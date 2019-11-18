@@ -4,11 +4,13 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "aluno")
+@NamedQuery(name = "alunoName", query = "SELECT a FROM Aluno a WHERE a.filiado.nome = :name")
 public class Aluno {
 	
 	@Id

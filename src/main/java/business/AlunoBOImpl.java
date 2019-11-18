@@ -66,4 +66,18 @@ public class AlunoBOImpl implements AlunoBO {
 		}
 		return result;
 	}
+	
+	public Aluno getAluno(String name) throws Exception{
+		Aluno a;
+		try {
+			a = dao.get(name, "alunoName");
+		} catch (IllegalArgumentException e) {
+			throw new IllegalArgumentException("Ocorreu um erro ao buscar a aluno!"
+					+ " Verifique se todos os dados foram preenchidos corretamente.");
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar a entidade." + e.getMessage());
+		}
+		return a;
+	}
 }

@@ -183,7 +183,7 @@
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cidade_professor" placeholder="Cidade" disabled="true" id="txb_cidade_professor_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cep_professor" placeholder="CEP" disabled="true" id="txb_cep_professor_edicao"></div>
                                 <input type="hidden" name="operacao" value="editar">
-                                <div class="form-group text-center"><input  class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_professor" type="submit" value="EDITAR"/></div>
+                                <div class="form-group text-center"><input class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_professor" type="submit" value="EDITAR"/></div>
                                 <!--<div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_professor">EDITAR</button></div>-->
                             </form>
                         </div>
@@ -197,9 +197,9 @@
                             </div>
                         </div>
                         <div class="col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);">
-                                <div class="form-group"><input class="form-control" type="text" name="nome_aluno" placeholder="Nome do aluno" id="txb_nome_aluno_cadastro"></div>
-								<div class="form-group"><input class="form-control" type="text" name="nome_professor_aluno" placeholder="Nome do professor do aluno" id="txb_nome_professor_aluno"></div>
+                            <form style="background-color: rgb(241,247,252);" action="addAluno.do" method="post">
+                                <div class="form-group"><input class="form-control" type="text" name="nome" placeholder="Nome do aluno" id="txb_nome_aluno_cadastro"></div>
+								<div class="form-group"><input class="form-control" type="text" name="nome_professor" placeholder="Nome do professor do aluno" id="txb_nome_professor_aluno"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" id="txb_nome_dojo_aluno"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="registro_cbj" placeholder="Registro CBJ" id="txb_registro_cbj_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="rg" placeholder="RG" id="txb_rg_aluno_cadastro"></div>
@@ -212,7 +212,8 @@
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="cidade" placeholder="Cidade" id="txb_cidade_aluno_cadastro"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control" type="text" name="cep" placeholder="CEP" id="txb_cep_aluno_cadastro"></div>
                                 <input type="hidden" name="operacao" value="cadastrar">
-                                <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_aluno">CADASTRAR</button></div>
+                                <div class="form-group text-center"><input class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_professor" type="submit" value="CADASTRAR"/></div>
+                                <!--<div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_cadastrar_aluno">CADASTRAR</button></div>-->
                             </form>
                         </div>
                     </div>
@@ -225,14 +226,15 @@
                             </div>
                         </div>
                         <div class="col-xl-11 m-auto" style="filter: blur(0px);">
-                            <form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;">
+                            <form style="background-color: rgb(241,247,252);margin-bottom: 50px;margin-top: 40px;" action="searchAluno.do" method="post">
                                 <div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_aluno_buscar" placeholder="Nome do aluno" id="txb_adm_nome_aluno_busca"></div>
                                 <input type="hidden" name="operacao" value="buscar">
-                                <div class="form-group text-center d-inline-block float-none" style="margin-left: 15px;"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_aluno_busca">BUSCAR</button></div>
+                                <div class="form-group text-center d-inline-block float-none" style="margin-left: 15px;"><input class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_aluno_busca" type="submit" value="BUSCAR"/></div>
+                                <!--<div class="form-group text-center d-inline-block float-none" style="margin-left: 15px;"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_adm_nome_aluno_busca">BUSCAR</button></div>-->
                             </form>
                         </div>
                         <div class="col-xl-11 m-auto">
-                            <form style="background-color: rgb(241,247,252);">
+                            <form style="background-color: rgb(241,247,252);" action="updateAluno.do" method="post">
                                 <div class="form-group"><input class="form-control aluno_edicao" type="text" name="nome_dojo" placeholder="Nome do aluno" disabled="true" id="txb_nome_aluno_edicao"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_professor_aluno" placeholder="Nome do professor do aluno" disabled="true"  id="txb_nome_professor_aluno_edicao"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_aluno_edicao"></div>
@@ -247,7 +249,8 @@
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cidade_aluno" placeholder="Cidade" disabled="true" id="txb_cidade_aluno_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cep_aluno" placeholder="CEP" disabled="true" id="txb_cep_aluno_edicao"></div>
                                 <input type="hidden" name="operacao" value="editar">
-                                <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_aluno">EDITAR</button></div>
+                                <div class="form-group text-center"><input class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_aluno" type="submit" value="EDITAR"/></div>
+                                <!--<div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_aluno">EDITAR</button></div>-->
                             </form>
                         </div>
                     </div>

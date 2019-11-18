@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import business.AlunoBOImpl;
 import model.bean.Aluno;
-import model.bean.Endereco;
-import model.bean.Entidade;
 
 /**
  * Servlet implementation class AlunoServlet
@@ -29,16 +27,47 @@ public class AlunoServlet extends HttpServlet {
 			addAluno(request, response);
 			break;
 		case "buscar":
+			searchAluno(request, response);
 			break;
 		case "editar":
+			updateAluno(request, response);
 			break;
 		}
 	}
 	
 	private void addAluno(HttpServletRequest request, HttpServletResponse response) {
-		Aluno a = util.criarAluno(request);
+		Aluno a = new Aluno();
+		a = util.criarAluno(request);
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
 		try {
 			aluno.createAluno(a);
+			response.getWriter().write("Cadastrado com sucesso");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void searchAluno(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		Aluno a = new Aluno();
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			a = aluno.getAluno(request.getParameter("nome_aluno_buscar"));
+			response.getWriter().write("Aluno: " + util.printaTudo(a));
+		} catch (Exception e) {
+			e.printStackTrace();
+			response.getWriter().write("Não foi possivel realizar o cadastro");
+		}
+	}
+	
+	private void updateAluno(HttpServletRequest request, HttpServletResponse response) {
+		Aluno a = new Aluno();
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			a = aluno.getAluno("Aluno Teste 1");
+			aluno.updateAluno(a);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
