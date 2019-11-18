@@ -170,7 +170,7 @@
 						<div class="col-xl-11 m-auto">
                             <form style="background-color: rgb(241,247,252);" action="professor/update.do" method="post">
                                 <div class="form-group"><input class="form-control professor_edicao" type="text" name="nome_dojo" placeholder="Nome do professor" disabled="true" id="txb_nome_professor_edicao"></div>
-								<div class="form-group"><input class="form-control" type="text" name="nome_professor_professor" placeholder="Nome do professor do professor" disabled="true"  id="txb_nome_professor_professor_edicao"></div>
+								<div class="form-group"><input class="form-control" type="text" name="nome_professor" placeholder="Nome do professor do professor" disabled="true"  id="txb_nome_professor_professor_edicao"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_professor_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="registro_cbj" placeholder="Registro CBJ" disabled="true" id="txb_registro_cbj_professor_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="rg" placeholder="RG" disabled="true" id="txb_rg_professor_edicao"></div>
@@ -235,8 +235,8 @@
                         </div>
                         <div class="col-xl-11 m-auto">
                             <form style="background-color: rgb(241,247,252);" action="aluno/update.do" method="post">
-                                <div class="form-group"><input class="form-control aluno_edicao" type="text" name="nome_dojo" placeholder="Nome do aluno" disabled="true" id="txb_nome_aluno_edicao"></div>
-								<div class="form-group"><input class="form-control" type="text" name="nome_professor_aluno" placeholder="Nome do professor do aluno" disabled="true"  id="txb_nome_professor_aluno_edicao"></div>
+                                <div class="form-group"><input class="form-control aluno_edicao" type="text" name="nome_aluno" placeholder="Nome do aluno" disabled="true" id="txb_nome_aluno_edicao"></div>
+								<div class="form-group"><input class="form-control" type="text" name="nome_professor" placeholder="Nome do professor do aluno" disabled="true"  id="txb_nome_professor_aluno_edicao"></div>
 								<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_aluno_edicao"></div>
                                 <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="registro_cbj" placeholder="Registro CBJ" disabled="true" id="txb_registro_cbj_aluno_edicao"></div>
                                 <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="rg" placeholder="RG" disabled="true" id="txb_rg_aluno_edicao"></div>

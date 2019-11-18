@@ -67,11 +67,13 @@ public class ProfessorServlet extends HttpServlet {
 	
 	private void updateProfessor(HttpServletRequest request, HttpServletResponse response) {
 		Professor prof = new Professor();
+		Professor newProf = new Professor();
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
-			//prof = professor.getProfessor(request.getParameter(""));
-			prof = professor.getProfessor("Professor Teste 1");
+			newProf = professor.getProfessor(request.getParameter("nome_professor"));
+			prof = util.criarProfessor(request);
+			newProf.copyProperties(prof);
 			professor.updateProfessor(prof);
 		} catch (Exception e) {
 			e.printStackTrace();

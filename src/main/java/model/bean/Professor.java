@@ -62,4 +62,9 @@ public class Professor {
 	public String toString(){
 		return this.filiado.getNome();
 	}
+	
+	public void copyProperties(Professor professor) {
+		filiado = professor.filiado;
+		entidades = professor.entidades;
+	}
 }
