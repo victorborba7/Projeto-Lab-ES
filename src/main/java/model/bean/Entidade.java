@@ -78,7 +78,7 @@ public class Entidade {
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-
+	
 	@Override
 	public String toString(){
 		return "Dojo=[ID: " + this.entidade_id + "; Nome: " + this.nome + "; CNPJ: " + this.cnpj + "; Endereço: " + this.getEndereco().toString() + "]";

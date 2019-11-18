@@ -67,13 +67,14 @@ public class DojoServlet extends HttpServlet {
 	
 	private void updateDojo(HttpServletRequest request, HttpServletResponse response) {
 		Entidade ent = new Entidade();
+		Entidade newEnt = new Entidade();
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
-			//ent = entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
-			ent = entidade.getEntidade("Teste Dojo 1");
-			ent.setCnpj("6564654645");
-			entidade.updateEntidade(ent);
+			newEnt = entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
+			ent = util.criarEntidade(request);
+			newEnt.copyProperties(ent);
+			entidade.updateEntidade(newEnt);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
