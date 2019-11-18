@@ -37,15 +37,9 @@ public class DojoServlet extends HttpServlet {
 		
 	}
 	
-	private String printaTudo(Entidade ent) {
-		System.out.println(ent.toString());
-		return ent.toString();
-	}
-	
 	private void addDojo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Entidade ent = new Entidade();
-		Endereco end = new Endereco();
-		util.criarEntidade(ent, end, request);
+		ent = util.criarEntidade(request);
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
@@ -61,10 +55,9 @@ public class DojoServlet extends HttpServlet {
 		Entidade ent = new Entidade();
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
-		System.out.println(request.getParameter("nome_dojo_buscar"));
 		try {
 			ent = entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
-			response.getWriter().write("Dojo: " + printaTudo(ent));
+			response.getWriter().write("Dojo: " + util.printaTudo(ent));
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.getWriter().write("Não foi possivel realizar o cadastro");

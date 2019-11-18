@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 public class DAOImpl<E> implements DAO<E> {
 
@@ -51,7 +52,7 @@ public class DAOImpl<E> implements DAO<E> {
     }
 
     @SuppressWarnings("unchecked")
-	public E get(String name) throws IllegalArgumentException {
-    	return (E) em.createNamedQuery("name", clazz).setParameter("name", name).getSingleResult();
+	public E get(String name, String query) throws IllegalArgumentException {
+    	return (E) em.createNamedQuery(query, clazz).setParameter("name", name).getSingleResult();
     }
 }

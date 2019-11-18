@@ -7,12 +7,14 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="professor")
+@NamedQuery(name = "professorName", query = "SELECT p FROM Professor p WHERE p.filiado.nome = :name")
 public class Professor {
 	
 	@Id

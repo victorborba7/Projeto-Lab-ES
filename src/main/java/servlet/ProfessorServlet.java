@@ -8,8 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import business.ProfessorBOImpl;
-import model.bean.Endereco;
-import model.bean.Entidade;
 import model.bean.Professor;
 
 /**
@@ -26,30 +24,21 @@ public class ProfessorServlet extends HttpServlet {
 		
 		switch(request.getParameter("operacao")) {
 		case "cadastrar":
-			addDojo(request, response);
+			addProfessor(request, response);
 			break;
 		case "buscar":
-			searchDojo(request, response);
+			searchProfessor(request, response);
 			break;
 		case "editar":
-			updateDojo(request, response);
+			updateProfessor(request, response);
 			break;
 		}
 		
 	}
 	
-	private String printaTudo(Professor prof) {
-		System.out.println(prof.toString());
-		return prof.toString();
-	}
-	
-	private void addDojo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void addProfessor(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Professor prof = new Professor();
-		Entidade ent = new Entidade();
-		Endereco end = new Endereco();
-		util.criarEndereco(end, request);
-		util.criarEntidade(ent, end, request);
-		util.criarProfessor(prof, ent, end, request);
+		prof = util.criarProfessor(request);
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
@@ -61,28 +50,27 @@ public class ProfessorServlet extends HttpServlet {
 		}
 	}
 	
-	private void searchDojo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	private void searchProfessor(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Professor prof = new Professor();
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
-		System.out.println(request.getParameter("nome_dojo_buscar"));
 		try {
-			prof = professor.getProfessor(request.getParameter("nome_dojo_buscar"));
-			response.getWriter().write("Dojo: " + printaTudo(prof));
+			prof = professor.getProfessor(request.getParameter("nome_professor_buscar"));
+			response.getWriter().write("Professor: " + util.printaTudo(prof));
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.getWriter().write("Não foi possivel realizar o cadastro");
 		}
 	}
 	
-	private void updateDojo(HttpServletRequest request, HttpServletResponse response) {
+	private void updateProfessor(HttpServletRequest request, HttpServletResponse response) {
 		Professor prof = new Professor();
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
 			//ent = entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
 			//prof = professor.getProfessor(request.getParameter(""));
-			prof = professor.getProfessor("");
+			prof = professor.getProfessor("Professor Teste 1");
 			professor.updateProfessor(prof);
 		} catch (Exception e) {
 			e.printStackTrace();

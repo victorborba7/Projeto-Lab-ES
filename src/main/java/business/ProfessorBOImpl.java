@@ -15,7 +15,6 @@ public class ProfessorBOImpl implements ProfessorBO {
 
 	public void createProfessor(Professor professor) throws Exception {
 		try {
-			professor.getFiliado().setId(Filiado.qtd);
 			dao.save(professor);
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao cadastrar o professor!"
@@ -70,7 +69,7 @@ public class ProfessorBOImpl implements ProfessorBO {
 	public Professor getProfessor(String name) throws Exception{
 		Professor prof;
 		try {
-			prof = dao.get(name);
+			prof = dao.get(name, "professorName");
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao buscar a entidade!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");

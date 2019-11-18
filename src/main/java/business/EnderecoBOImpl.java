@@ -68,7 +68,7 @@ public class EnderecoBOImpl implements EnderecoBO {
 	public Endereco getEndereco(String endereco) throws Exception{
 		Endereco end;
 		try {
-			end = dao.get(endereco);
+			end = dao.get(endereco, "enderecoRua");
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao buscar a endereco!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");

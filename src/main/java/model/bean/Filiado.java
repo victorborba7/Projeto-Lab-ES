@@ -1,16 +1,14 @@
 package model.bean;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -31,10 +29,10 @@ public class Filiado {
 	String registroCbj;
 	
 	@Column
-	Date dataNascimento;
+	LocalDate dataNascimento;
 	
 	@Column
-	Date dataCadastro;
+	LocalDate dataCadastro;
 	
 	@Column
 	String telefone1;
@@ -51,8 +49,8 @@ public class Filiado {
 	@Column
 	String observacoes;
 
-	@OneToOne(cascade=CascadeType.ALL)
-	Rg rg = new Rg();
+	@Column
+	String rg;
 
 	@OneToOne(cascade=CascadeType.ALL)
 	Endereco endereco = new Endereco();
@@ -102,16 +100,16 @@ public class Filiado {
 	public void setRegistroCbj(String registroCbj) {
 		this.registroCbj = registroCbj;
 	}
-	public Date getDataNascimento() {
+	public LocalDate getDataNascimento() {
 		return dataNascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(LocalDate dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	public Date getDataCadastro() {
+	public LocalDate getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setDataCadastro(Date dataCadastro) {
+	public void setDataCadastro(LocalDate dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 	public String getTelefone1() {
@@ -150,10 +148,10 @@ public class Filiado {
 	public void setFaixas(List<Faixa> faixas) {
 		this.faixas = faixas;
 	}
-	public Rg getRg() {
+	public String getRg() {
 		return rg;
 	}
-	public void setRg(Rg rg) {
+	public void setRg(String rg) {
 		this.rg = rg;
 	}
 
@@ -178,8 +176,8 @@ public class Filiado {
 		observacoes = f.observacoes;
 	}
 
-	public Filiado(Long filiado_id, String nome, String registroCbj, Date dataNascimento, Date dataCadastro,
-			String telefone1, String telefone2, String email, String cpf, String observacoes, Rg rg, Endereco endereco,
+	public Filiado(Long filiado_id, String nome, String registroCbj, LocalDate dataNascimento, LocalDate dataCadastro,
+			String telefone1, String telefone2, String email, String cpf, String observacoes, String rg, Endereco endereco,
 			List<Faixa> faixas) {
 		super();
 		this.filiado_id = filiado_id;
