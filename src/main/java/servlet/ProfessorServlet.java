@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import business.ProfessorBOImpl;
 import model.bean.Professor;
 
@@ -58,7 +60,10 @@ public class ProfessorServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			prof = professor.getProfessor(request.getParameter("nome_professor_buscar"));
-			response.getWriter().write("Professor: " + util.printaTudo(prof));
+			ObjectMapper mapper = new ObjectMapper();
+			String result = mapper.writeValueAsString(prof);
+			request.setAttribute("result", result);
+			response.getWriter().write("Professor: " + result);
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.getWriter().write("Não foi possivel realizar o cadastro");

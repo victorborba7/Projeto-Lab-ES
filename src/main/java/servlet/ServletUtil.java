@@ -93,9 +93,4 @@ public class ServletUtil {
 			return null;
 		}
 	}
-	
-	public String printaTudo(Object O) {
-		System.out.println(O.toString());
-		return O.toString();
-	}
 }

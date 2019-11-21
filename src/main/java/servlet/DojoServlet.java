@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import business.EntidadeBOImpl;
 import model.bean.Entidade;
 
@@ -58,7 +60,10 @@ public class DojoServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			ent = entidade.getEntidade(request.getParameter("nome_dojo_buscar"));
-			response.getWriter().write("Dojo: " + util.printaTudo(ent));
+			ObjectMapper mapper = new ObjectMapper();
+			String result = mapper.writeValueAsString(ent);
+			request.setAttribute("result", result);
+			response.getWriter().write("Dojo: " + result);
 		} catch (Exception e) {
 			e.printStackTrace();
 			response.getWriter().write("Não foi possivel realizar o cadastro");
