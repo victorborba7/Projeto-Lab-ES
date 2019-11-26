@@ -27,6 +27,7 @@
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li><a href="#" onclick="cadastrarDojo()">Cadastrar dojo</a></li>
                             <li><a href="#" onclick="administrarDojo()">Administrar dojo</a></li>
+                            <li><a href="#" onclick="visualizarDojos()">Visualizar dojos</a></li>
                         </ul>
                     </li>
         <li class="active">
@@ -36,6 +37,7 @@
                         <ul class="collapse list-unstyled" id="homeSubmenu2">
                             <li><a href="#" onclick="cadastrarProfessor()">Cadastrar professor</a></li>
                             <li><a href="#" onclick="administrarProfessor()">Administrar professor</a></li>
+                            <li><a href="#" onclick="visualizarProfessores()">Visualizar professores</a></li>
                         </ul>
                     </li>
         <li class="active">
@@ -45,6 +47,7 @@
                         <ul class="collapse list-unstyled" id="homeSubmenu3">
                             <li><a href="#" onclick="cadastrarAluno()">Cadastrar aluno</a></li>
                             <li><a href="#" onclick="administrarAluno()">Administrar aluno</a></li>
+                            <li><a href="#" onclick="visualizarAlunos()">Visualizar alunos</a></li>
                         </ul>
                     </li>
     </ul>
@@ -111,6 +114,21 @@
                         </div>
                     </div>
                 </div>
+                <div id="visualizar_dojos" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-dojos" href="#menu-toggle-visualizar-dojos"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div>
+                                <h1 class="text-center" style="margin-bottom: 20px;">VISUALIZAR DOJOS</h1>
+                            </div>
+                        </div>
+                        <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto" style="filter: blur(0px);">
+							<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_dojo_filtrar" placeholder="Nome do dojo" id="txb_adm_nome_dojo_filtrar"></div>
+						   	<div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_nome_dojo_filtrar">FILTRAR</button></div>
+                        </div>
+                        <div id="table_dojos" class="col-xl-11 m-auto">
+                        </div>
+                    </div>
+                </div>
                 <div id="cadastrar_professor" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-professor" href="#menu-toggle-cadastrar-professor"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -148,8 +166,8 @@
                         </div>
 						<div class="col-xl-11 m-auto">
                             <div class="form-group"><input class="form-control professor_edicao" type="text" name="nome_dojo" placeholder="Nome do professor" disabled="true" id="txb_nome_professor_edicao"></div>
-							<div class="form-group"><input class="form-control" type="text" name="nome_professor" placeholder="Nome do professor do professor" disabled="true"  id="txb_nome_professor_professor_edicao"></div>
-							<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_professor_edicao"></div>
+							<div class="form-group"><input class="form-control professor_edicao" type="text" name="nome_professor" placeholder="Nome do professor do professor" disabled="true"  id="txb_nome_professor_professor_edicao"></div>
+							<div class="form-group"><input class="form-control professor_edicao" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_professor_edicao"></div>
                             <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="registro_cbj" placeholder="Registro CBJ" disabled="true" id="txb_registro_cbj_professor_edicao"></div>
                             <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="rg" placeholder="RG" disabled="true" id="txb_rg_professor_edicao"></div>
                             <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cpf" placeholder="CPF" disabled="true" id="txb_cpf_professor_edicao"></div>
@@ -161,6 +179,21 @@
                             <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cidade_professor" placeholder="Cidade" disabled="true" id="txb_cidade_professor_edicao"></div>
                             <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cep_professor" placeholder="CEP" disabled="true" id="txb_cep_professor_edicao"></div>
                             <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_professor">EDITAR</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="visualizar_professores" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-professores" href="#menu-toggle-visualizar-professores"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div>
+                                <h1 class="text-center" style="margin-bottom: 20px;">VISUALIZAR PROFESSORES</h1>
+                            </div>
+                        </div>
+                        <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto" style="filter: blur(0px);">
+							<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_professor_filtrar" placeholder="Nome do professor" id="txb_nome_professor_filtrar"></div>
+						   	<div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_nome_professor_filtrar">FILTRAR</button></div>
+                        </div>
+                        <div id="table_professores" class="col-xl-11 m-auto">
                         </div>
                     </div>
                 </div>
@@ -202,8 +235,8 @@
                         </div>
                         <div class="col-xl-11 m-auto">
                             <div class="form-group"><input class="form-control aluno_edicao" type="text" name="nome_aluno" placeholder="Nome do aluno" disabled="true" id="txb_nome_aluno_edicao"></div>
-							<div class="form-group"><input class="form-control" type="text" name="nome_professor" placeholder="Nome do professor do aluno" disabled="true"  id="txb_nome_professor_aluno_edicao"></div>
-							<div class="form-group"><input class="form-control" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_aluno_edicao"></div>
+							<div class="form-group"><input class="form-control aluno_edicao" type="text" name="nome_professor" placeholder="Nome do professor do aluno" disabled="true"  id="txb_nome_professor_aluno_edicao"></div>
+							<div class="form-group"><input class="form-control aluno_edicao" type="text" name="nome_dojo" placeholder="Nome do dojo" disabled="true"  id="txb_nome_dojo_aluno_edicao"></div>
                             <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="registro_cbj" placeholder="Registro CBJ" disabled="true" id="txb_registro_cbj_aluno_edicao"></div>
                             <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="rg" placeholder="RG" disabled="true" id="txb_rg_aluno_edicao"></div>
                             <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cpf" placeholder="CPF" disabled="true" id="txb_cpf_aluno_edicao"></div>
@@ -215,6 +248,21 @@
                             <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cidade_aluno" placeholder="Cidade" disabled="true" id="txb_cidade_aluno_edicao"></div>
                             <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cep_aluno" placeholder="CEP" disabled="true" id="txb_cep_aluno_edicao"></div>
                             <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_aluno">EDITAR</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="visualizar_alunos" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-alunos" href="#menu-toggle-visualizar-alunos"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                    <div class="row" style="width: 100%;">
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div>
+                                <h1 class="text-center" style="margin-bottom: 20px;">VISUALIZAR ALUNOS</h1>
+                            </div>
+                        </div>
+                        <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto" style="filter: blur(0px);">
+							<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_professor_filtrar" placeholder="Nome do aluno" id="txb_nome_aluno_filtrar"></div>
+						   	<div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_nome_aluno_filtrar">FILTRAR</button></div>
+                        </div>
+                        <div id="table_alunos" class="col-xl-11 m-auto">
                         </div>
                     </div>
                 </div>

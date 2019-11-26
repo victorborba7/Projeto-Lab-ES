@@ -5,6 +5,9 @@ function judocas(){
     document.getElementById('administrar_professor').style.display='none';
     document.getElementById('cadastrar_aluno').style.display='none';
     document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='none';
 }
 
 function cadastrarDojo(){
@@ -14,6 +17,9 @@ function cadastrarDojo(){
     document.getElementById('administrar_professor').style.display='none';
     document.getElementById('cadastrar_aluno').style.display='none';
     document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='none';
 }
 
 function administrarDojo(){
@@ -23,6 +29,9 @@ function administrarDojo(){
     document.getElementById('administrar_professor').style.display='none';
     document.getElementById('cadastrar_aluno').style.display='none';
     document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='none';
 }
 
 function cadastrarProfessor(){
@@ -32,6 +41,9 @@ function cadastrarProfessor(){
     document.getElementById('administrar_professor').style.display='none';
     document.getElementById('cadastrar_aluno').style.display='none';
     document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='none';
 }
 
 function administrarProfessor(){
@@ -41,6 +53,9 @@ function administrarProfessor(){
     document.getElementById('administrar_professor').style.display='';
     document.getElementById('cadastrar_aluno').style.display='none';
     document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='none';
 }
 
 function cadastrarAluno(){
@@ -50,6 +65,9 @@ function cadastrarAluno(){
     document.getElementById('administrar_professor').style.display='none';
     document.getElementById('cadastrar_aluno').style.display='';
     document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='none';
 }
 
 function administrarAluno(){
@@ -59,4 +77,43 @@ function administrarAluno(){
     document.getElementById('administrar_professor').style.display='none';
     document.getElementById('cadastrar_aluno').style.display='none';
     document.getElementById('administrar_aluno').style.display='';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='none';
+}
+
+function visualizarAlunos(){
+    document.getElementById('bem_vindo').style.display='none'; document.getElementById('cadastrar_dojo').style.display='none';
+    document.getElementById('administrar_dojo').style.display='none';
+    document.getElementById('cadastrar_professor').style.display='none';
+    document.getElementById('administrar_professor').style.display='none';
+    document.getElementById('cadastrar_aluno').style.display='none';
+    document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='none';
+}
+
+function visualizarProfessores(){
+    document.getElementById('bem_vindo').style.display='none'; document.getElementById('cadastrar_dojo').style.display='none';
+    document.getElementById('administrar_dojo').style.display='none';
+    document.getElementById('cadastrar_professor').style.display='none';
+    document.getElementById('administrar_professor').style.display='none';
+    document.getElementById('cadastrar_aluno').style.display='none';
+    document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='';
+    document.getElementById('visualizar_dojos').style.display='none';
+}
+
+function visualizarDojos(){
+    document.getElementById('bem_vindo').style.display='none'; document.getElementById('cadastrar_dojo').style.display='none';
+    document.getElementById('administrar_dojo').style.display='none';
+    document.getElementById('cadastrar_professor').style.display='none';
+    document.getElementById('administrar_professor').style.display='none';
+    document.getElementById('cadastrar_aluno').style.display='none';
+    document.getElementById('administrar_aluno').style.display='none';
+    document.getElementById('visualizar_alunos').style.display='none';
+    document.getElementById('visualizar_professores').style.display='none';
+    document.getElementById('visualizar_dojos').style.display='';
 }

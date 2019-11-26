@@ -1,5 +1,7 @@
 $(document).ready(function(){
-	
+	generateTable("table_alunos", "");
+	generateTable("table_professores", "");
+	generateTable("table_dojos", "");
 	$("#boas_vindas").html($("#boas_vindas").html() + " " + window.localStorage.getItem("username"));
 	
 	$("#btn_adm_nome_dojo_busca").click(function(){
@@ -45,6 +47,19 @@ $(document).ready(function(){
 						if(data == "false"){
 							swal("Ops!!", "Aluno não encontrado!", "error");
 						}else{
+							$("#txb_nome_aluno_cadastro").val();
+							$("#txb_nome_dojo_aluno").val();
+							$("#txb_nome_professor_aluno").val();
+							$("#txb_registro_cbj_aluno_cadastro").val();
+							$("#txb_rg_aluno_cadastro").val();
+							$("#txb_cpf_aluno_cadastro").val();
+							$("#txb_celular_aluno_cadastro").val();
+							$("#txb_rua_aluno_cadastro").val();
+							$("#txb_numero_aluno_cadastro").val();
+							$("#txb_bairro_aluno_cadastro").val();
+							$("#txb_cidade_aluno_cadastro").val();
+							$("#txb_estado_aluno_cadastro").val();
+							$("#txb_cep_aluno_cadastro").val();
 							controlarCamposDesabilitadosDojos(false);
 						}
 					});
@@ -64,6 +79,19 @@ $(document).ready(function(){
 						if(data == "false"){
 							swal("Ops!!", "Professor não encontrado!", "error");
 						}else{
+							var obj = JSON.stringify(data);
+							$("#txb_nome_professor_edicao").val(obj.match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_celular_professor_edicao").val(obj.match(/(?:(?=\\"telefone1\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_nome_dojo_professor_edicao").val(obj.replace(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/,"").match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_cpf_professor_edicao").val(obj.match(/(?:(?=\\"cpf\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_rg_professor_edicao").val(obj.match(/(?:(?=\\"rg\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_registro_cbj_professor_edicao").val(obj.match(/(?:(?=\\"registroCbj\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_rua_professor_edicao").val(obj.match(/(?:(?=\\"rua\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_numero_professor_edicao").val(obj.match(/(?:(?=\\"numero\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_bairro_professor_edicao").val(obj.match(/(?:(?=\\"bairro\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_cidade_professor_edicao").val(obj.match(/(?:(?=\\"cidade\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_estado_professor_edicao").val(obj.match(/(?:(?=\\"estado\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_cep_professor_edicao").val(obj.match(/(?:(?=\\"cep\\"\:\\").+?\\"\:\\")(.+?)(?=\\")/)[1]);
 							controlarCamposDesabilitadosProfessores(false);
 						}
 					});
@@ -72,8 +100,8 @@ $(document).ready(function(){
 	
 	$("#btn_cadastrar_aluno").click(function(){
 		var nome = $("#txb_nome_aluno_cadastro").val();
-		var nome_dojo = $("#txb_nome_dojo_aluno_cadastro").val();
-		var nome_professor = $("#txb_nome_professor_aluno_cadastro").val();
+		var nome_dojo = $("#txb_nome_dojo_aluno").val();
+		var nome_professor = $("#txb_nome_professor_aluno").val();
 		var cbj = $("#txb_registro_cbj_aluno_cadastro").val();
 		var rg = $("#txb_rg_aluno_cadastro").val();
 		var cpf = $("#txb_cpf_aluno_cadastro").val();
@@ -85,15 +113,15 @@ $(document).ready(function(){
 		var estado = $("#txb_estado_aluno_cadastro").val();
 		var cep = $("#txb_cep_aluno_cadastro").val();
 		
-		if(nome == "" || cbj == "" || rg == "" || cpf == "" || celular == "" || rua == "" || numero == "" || bairro == "" || cidade == "" || estado == "" || cep == ""){
+		if(nome == "" || cbj == "" || rg == "" || cpf == "" || celular == "" || rua == "" || numero == "" || bairro == "" || cidade == "" || estado == "" || cep == "" || nome_dojo == "" || nome_professor == ""){
 			swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!", "error");
 		}else{
 			$.post("/judocas/aluno/add.do",
 					{
-						nome: nome,
+						nome_aluno: nome,
 						nome_dojo: nome_dojo,
 						nome_professor: nome_professor,
-						cbj: cbj,
+						registro_cbj: cbj,
 						rg: rg,
 						cpf: cpf,
 						celular: celular,
@@ -121,8 +149,8 @@ $(document).ready(function(){
 	
 	$("#btn_cadastrar_professor").click(function(){
 		var nome = $("#txb_nome_professor_cadastro").val();
-		var nome_dojo = $("#txb_nome_dojo_professor_cadastro").val();
-		var nome_professor = $("#txb_nome_professor_professor_cadastro").val();
+		var nome_dojo = $("#txb_nome_dojo_professor").val();
+		var nome_professor = $("#txb_nome_professor_professor").val();
 		var cbj = $("#txb_registro_cbj_professor_cadastro").val();
 		var rg = $("#txb_rg_professor_cadastro").val();
 		var cpf = $("#txb_cpf_professor_cadastro").val();
@@ -134,7 +162,7 @@ $(document).ready(function(){
 		var estado = $("#txb_estado_professor_cadastro").val();
 		var cep = $("#txb_cep_professor_cadastro").val();
 		
-		if(nome == "" || cbj == "" || rg == "" || cpf == "" || celular == "" || rua == "" || numero == "" || bairro == "" || cidade == "" || estado == "" || cep == ""){
+		if(nome == "" || cbj == "" || rg == "" || cpf == "" || celular == "" || rua == "" || numero == "" || bairro == "" || cidade == "" || estado == "" || cep == "" || nome_professor == "" || nome_dojo == ""){
 			swal("Ops!!", "Há campos não preenchidos, por gentileza verifique o formulário novamente!", "error");
 		}else{
 			$.post("/judocas/professor/add.do",
@@ -142,10 +170,10 @@ $(document).ready(function(){
 						nome: nome,
 						nome_dojo: nome_dojo,
 						nome_professor: nome_professor,
-						cbj: cbj,
+						registro_cbj: cbj,
 						rg: rg,
 						cpf: cpf,
-						celular: celular,
+						telefone1: celular,
 						rua: rua,
 						numero: numero,
 						bairro: bairro,
@@ -279,7 +307,7 @@ $(document).ready(function(){
 						nome: nome,
 						nome_dojo: nome_dojo,
 						nome_professor: nome_professor,
-						cbj: cbj,
+						registro_cbj: cbj,
 						rg: rg,
 						cpf: cpf,
 						celular: celular,
@@ -328,10 +356,10 @@ $(document).ready(function(){
 						nome: nome,
 						nome_dojo: nome_dojo,
 						nome_professor: nome_professor,
-						cbj: cbj,
+						registro_cbj: cbj,
 						rg: rg,
 						cpf: cpf,
-						celular: celular,
+						telefone1: celular,
 						rua: rua,
 						numero: numero,
 						bairro: bairro,
