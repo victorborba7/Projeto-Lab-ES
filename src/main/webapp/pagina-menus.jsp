@@ -178,6 +178,8 @@
                             <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="estado_professor" placeholder="Estado" disabled="true" id="txb_estado_professor_edicao"></div>
                             <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cidade_professor" placeholder="Cidade" disabled="true" id="txb_cidade_professor_edicao"></div>
                             <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control professor_edicao" type="text" name="cep_professor" placeholder="CEP" disabled="true" id="txb_cep_professor_edicao"></div>
+                            <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="dt_filiacao_professor" placeholder="Data de Filiacao" disabled="true" id="txb_dt_filiacao_professor_edicao"></div>
+                            <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_renovar_professor">RENOVAR FILIAÇÃO</button></div>
                             <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_professor">EDITAR</button></div>
                         </div>
                     </div>
@@ -247,6 +249,8 @@
                             <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="estado_aluno" placeholder="Estado" disabled="true" id="txb_estado_aluno_edicao"></div>
                             <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cidade_aluno" placeholder="Cidade" disabled="true" id="txb_cidade_aluno_edicao"></div>
                             <div class="form-group d-inline-block float-right" style="width: 47%;"><input class="form-control aluno_edicao" type="text" name="cep_aluno" placeholder="CEP" disabled="true" id="txb_cep_aluno_edicao"></div>
+                            <div class="form-group d-inline-block" style="width: 47%;"><input class="form-control" type="text" name="dt_filiacao_aluno" placeholder="Data de Filiacao" disabled="true" id="txb_dt_filiacao_aluno_edicao"></div>
+                            <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_renovar_aluno">RENOVAR FILIAÇÃO</button></div>
                             <div class="form-group text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_editar_aluno">EDITAR</button></div>
                         </div>
                     </div>

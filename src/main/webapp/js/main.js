@@ -4,6 +4,14 @@ $(document).ready(function(){
 	generateTable("table_dojos", "");
 	$("#boas_vindas").html($("#boas_vindas").html() + " " + window.localStorage.getItem("username"));
 	
+	$("#btn_renovar_professor").click(function(){
+		var dataAntiga = window.localStorage.getItem($("#txb_adm_nome_professor_busca").val());
+		window.localStorage.removeItem($("#btn_adm_nome_professor_busca").val());
+		window.localStorage.setItem($("#txb_adm_nome_professor_busca").val(), dataFomatada(new Date(dataAntiga.replace( /(\d{2})\/(\d{2})\/(\d{4})/, "$2/$1/$3")), 1));
+		$("#txb_dt_filiacao_professor_edicao").val(window.localStorage.getItem($("#txb_adm_nome_professor_busca").val()));
+		swal("Yahuu!!", "Professor renovado!", "success");
+	});
+	
 	$("#btn_adm_nome_dojo_busca").click(function(){
 		if($("#txb_adm_nome_dojo_busca").val() == ""){
 			swal("Ops!!", "Favor Inserir o nome do dojo no campo de busca!", "error");
@@ -60,6 +68,8 @@ $(document).ready(function(){
 							$("#txb_cidade_aluno_cadastro").val();
 							$("#txb_estado_aluno_cadastro").val();
 							$("#txb_cep_aluno_cadastro").val();
+							$("#txb_cep_aluno_cadastro").val();
+							$("#txb_dt_filiacao_aluno_edicao").val(window.localStorage.getItem(obj.match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]));
 							controlarCamposDesabilitadosDojos(false);
 						}
 					});
@@ -92,6 +102,7 @@ $(document).ready(function(){
 							$("#txb_cidade_professor_edicao").val(obj.match(/(?:(?=\\"cidade\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
 							$("#txb_estado_professor_edicao").val(obj.match(/(?:(?=\\"estado\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
 							$("#txb_cep_professor_edicao").val(obj.match(/(?:(?=\\"cep\\"\:\\").+?\\"\:\\")(.+?)(?=\\")/)[1]);
+							$("#txb_dt_filiacao_professor_edicao").val(window.localStorage.getItem(obj.match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]));
 							controlarCamposDesabilitadosProfessores(false);
 						}
 					});
@@ -138,6 +149,7 @@ $(document).ready(function(){
 							swal("Ops!!", "Erro ao cadastrar o Aluno!", "error");
 						}else{
 							swal("Yahuu!!", "Aluno " + nome + " cadastrado com sucesso!", "success");
+							window.localStorage.setItem(nome, dataFomatada(new Date(), 0));
 							controlarCamposDesabilitadosAlunos(true);
 							controlarCamposDesabilitadosProfessores(true);
 							controlarCamposDesabilitadosDojos(true);
@@ -187,6 +199,7 @@ $(document).ready(function(){
 							swal("Ops!!", "Erro ao cadastrar o professor!", "error");
 						}else{
 							swal("Yahuu!!", "Professor " + nome + " cadastrado com sucesso!", "success");
+							window.localStorage.setItem(nome, dataFomatada(new Date(), 0));
 							controlarCamposDesabilitadosAlunos(true);
 							controlarCamposDesabilitadosProfessores(true);
 							controlarCamposDesabilitadosDojos(true);
