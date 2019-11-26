@@ -1,15 +1,16 @@
 package business;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import model.bean.Aluno;
-import model.bean.Filiado;
 import model.dao.DAO;
 import model.dao.DAOImpl;
 
 public class AlunoBOImpl implements AlunoBO {
-	private static DAO<Aluno> dao = new DAOImpl<Aluno>(Aluno.class);
-	private static DAO<Filiado> daoF = new DAOImpl<Filiado>(Filiado.class);
+	private static DAO<Aluno> dao = new DAOImpl<>(Aluno.class);
+	
+	Logger logger = Logger.getGlobal();
 
 	public void createAluno(Aluno aluno) throws Exception {
 		try {
@@ -18,7 +19,7 @@ public class AlunoBOImpl implements AlunoBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao cadastrar o aluno!"
 				+ " Verifique se todos os dados foram preenchidos corretamente." + "/n" + e.getMessage() + e.getStackTrace());
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar o aluno.");
 		}
 	}
@@ -27,12 +28,11 @@ public class AlunoBOImpl implements AlunoBO {
 		try {
 			dao.save(aluno);
 		} catch (IllegalArgumentException e) {
-			e.printStackTrace();
-			throw new IllegalArgumentException( "Ocorreu um erro ao update os dados do aluno."
-				+ " Verifique se todos os dados foram preenchidos corretamente!");
+			logger.info(e.getMessage());
+			throw new IllegalArgumentException( "Ocorreu um erro ao update os dados do aluno.");
 		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar o aluno.");
+			logger.info(e.getMessage());
+			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar o aluno.");
 		}
 	}
 	
@@ -43,10 +43,9 @@ public class AlunoBOImpl implements AlunoBO {
 		try {
 			result = dao.search(aluno);
 		} catch (IllegalArgumentException e) {
-			throw new IllegalArgumentException("Ocorreu um erro ao pesquisar os dados do aluno."
-				+ " Verifique se todos os dados foram preenchidos corretamente!"  + e.getMessage() + e.getStackTrace());
+			throw new IllegalArgumentException("Ocorreu um erro ao pesquisar os dados do aluno.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao buscar os aluno.");
 		}
 		return result;
@@ -57,10 +56,9 @@ public class AlunoBOImpl implements AlunoBO {
 		try {
 			result = dao.list();
 		} catch (IllegalArgumentException e) {
-			throw new IllegalArgumentException("Ocorreu um erro ao obter a lista de alunos."
-				+ " Verifique se todos os dados foram preenchidos corretamente!");
+			throw new IllegalArgumentException("Ocorreu um erro ao obter a lista de alunos.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido o obter a lista de alunos.");
 		}
 		return result;
@@ -71,11 +69,9 @@ public class AlunoBOImpl implements AlunoBO {
 		try {
 			a = dao.get(name, "alunoName");
 		} catch (IllegalArgumentException e) {
-			throw new IllegalArgumentException("Ocorreu um erro ao buscar a aluno!"
-					+ " Verifique se todos os dados foram preenchidos corretamente.");
+			throw new IllegalArgumentException("Ocorreu um erro ao buscar a aluno!");
 		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar a entidade." + e.getMessage());
+			throw new Exception("Desculpe, ocorreu um erro desconhecido ao recuperar o aluno." + e.getMessage());
 		}
 		return a;
 	}

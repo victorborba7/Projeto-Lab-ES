@@ -1,6 +1,7 @@
 package business;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import model.bean.Filiado;
 import model.bean.Professor;
@@ -10,6 +11,7 @@ import model.dao.DAOImpl;
 public class ProfessorBOImpl implements ProfessorBO {
 	
 	private static DAO<Professor> dao = new DAOImpl<Professor>(Professor.class);
+	private Logger logger = Logger.getGlobal();
 
 
 
@@ -20,7 +22,7 @@ public class ProfessorBOImpl implements ProfessorBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao cadastrar o professor!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar o professor.");
 		}
 	}
@@ -32,7 +34,7 @@ public class ProfessorBOImpl implements ProfessorBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao atualizar os dados do professor!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar o professor.");
 		}
 	}
@@ -45,7 +47,7 @@ public class ProfessorBOImpl implements ProfessorBO {
 			throw new IllegalArgumentException("Ocorreu um erro ao listar de professores."
 				+ " Verifique se todos os dados foram preenchidos corretamente!");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao listar professores.");
 		}
 		return result;
@@ -60,7 +62,7 @@ public class ProfessorBOImpl implements ProfessorBO {
 			throw new IllegalArgumentException("Ocorreu um erro ao buscar os professores."
 				+ " Verifique se todos os dados foram preenchidos corretamente!");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao buscar os professores.");
 		}
 		return result;
@@ -74,7 +76,7 @@ public class ProfessorBOImpl implements ProfessorBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao buscar a entidade!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar a entidade.");
 		}
 		return prof;

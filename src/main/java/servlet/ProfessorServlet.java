@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,8 +20,9 @@ import model.bean.Professor;
 @WebServlet("/professor/*")
 public class ProfessorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private ProfessorBOImpl professor = new ProfessorBOImpl();
-	private ServletUtil util = new ServletUtil();
+	private final ProfessorBOImpl professor = new ProfessorBOImpl();
+	private final ServletUtil util = new ServletUtil();
+	private final Logger logger = Logger.getGlobal();
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -28,10 +30,18 @@ public class ProfessorServlet extends HttpServlet {
 		
 		switch(request.getParameter("operacao")) {
 		case "cadastrar":
-			addProfessor(request, response);
+			try {
+				addProfessor(request, response);
+			} catch(IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		case "buscar":
-			searchProfessor(request, response);
+			try {
+				searchProfessor(request, response);
+			} catch(IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		case "editar":
 			updateProfessor(request, response);
@@ -49,7 +59,7 @@ public class ProfessorServlet extends HttpServlet {
 			professor.createProfessor(prof);
 			response.getWriter().write("Cadastrado com sucesso");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			response.getWriter().write("Não foi possivel realizar o cadastro");
 		}
 	}
@@ -65,7 +75,7 @@ public class ProfessorServlet extends HttpServlet {
 			request.setAttribute("result", result);
 			response.getWriter().write("Professor: " + result);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			response.getWriter().write("Não foi possivel realizar o cadastro");
 		}
 	}
@@ -81,7 +91,7 @@ public class ProfessorServlet extends HttpServlet {
 			newProf.copyProperties(prof);
 			professor.updateProfessor(prof);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 		}
 		
 	}

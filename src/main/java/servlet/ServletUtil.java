@@ -6,6 +6,7 @@ package servlet;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -24,6 +25,7 @@ import model.bean.Professor;
 public class ServletUtil {
 	private EntidadeBOImpl entidade = new EntidadeBOImpl();
 	private ProfessorBOImpl professor = new ProfessorBOImpl();
+	private final Logger logger = Logger.getGlobal();
 	
 	public Endereco criarEndereco(HttpServletRequest request) {
 		Endereco endereco = new Endereco();
@@ -75,7 +77,7 @@ public class ServletUtil {
 			professor.setFiliado(criarFiliado(request));
 			return professor;
 		} catch (Exception e1) {
-			e1.printStackTrace();
+			logger.info(e1.getMessage());
 			return null;
 		}
 		
@@ -89,7 +91,7 @@ public class ServletUtil {
 			aluno.setFiliado(criarFiliado(request));
 			return aluno;
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			return null;
 		}
 	}

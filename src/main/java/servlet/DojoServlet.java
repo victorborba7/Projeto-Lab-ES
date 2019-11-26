@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,8 +20,9 @@ import model.bean.Entidade;
 @WebServlet("/dojo/*")
 public class DojoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private EntidadeBOImpl entidade = new EntidadeBOImpl();
-	private ServletUtil util = new ServletUtil();
+	private final EntidadeBOImpl entidade = new EntidadeBOImpl();
+	private final ServletUtil util = new ServletUtil();
+	private final Logger logger = Logger.getGlobal();
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -28,10 +30,18 @@ public class DojoServlet extends HttpServlet {
 		
 		switch(request.getParameter("operacao")) {
 		case "cadastrar":
-			addDojo(request, response);
+			try {
+				addDojo(request, response);
+			} catch(IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		case "buscar":
-			searchDojo(request, response);
+			try {
+				searchDojo(request, response);
+			}catch (IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		case "editar":
 			updateDojo(request, response);
@@ -49,7 +59,7 @@ public class DojoServlet extends HttpServlet {
 			entidade.createEntidade(ent);
 			response.getWriter().write("Cadastrado com sucesso");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			response.getWriter().write("Não foi possivel realizar o cadastro");
 		}
 	}
@@ -65,7 +75,7 @@ public class DojoServlet extends HttpServlet {
 			request.setAttribute("result", result);
 			response.getWriter().write("Dojo: " + result);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			response.getWriter().write("Não foi possivel realizar o cadastro");
 		}
 	}
@@ -81,8 +91,7 @@ public class DojoServlet extends HttpServlet {
 			newEnt.copyProperties(ent);
 			entidade.updateEntidade(newEnt);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 		}
-		
 	}
 }
