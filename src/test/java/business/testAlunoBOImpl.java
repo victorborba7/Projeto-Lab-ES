@@ -16,13 +16,16 @@ import model.bean.Aluno;
  *
  */
 class testAlunoBOImpl {
-
+	AlunoBOImpl alunoBO = new AlunoBOImpl();
+	Aluno aluno = new Aluno();
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@BeforeEach
 	void setUp() throws Exception {
-		Aluno aluno = new Aluno();
+		aluno.setEntidade(null);
+		aluno.setFiliado(null);
+		aluno.setProfessor(null);
 	}
 
 	/**
@@ -30,10 +33,17 @@ class testAlunoBOImpl {
 	 */
 	@AfterEach
 	void tearDown() throws Exception {
+		
 	}
 
 	@Test
 	void testCreateAluno() {
+		try {
+			alunoBO.createAluno(aluno);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		fail("Not yet implemented");
 	}
 

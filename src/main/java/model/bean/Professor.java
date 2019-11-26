@@ -7,8 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,8 +24,8 @@ public class Professor {
 	@OneToOne(cascade=CascadeType.ALL)
 	Filiado filiado;
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	List<Entidade> entidades = new ArrayList<Entidade>();
+	@ManyToMany(cascade=CascadeType.ALL)
+	List<Entidade> entidades = new ArrayList<>();
 
 
 	@Override

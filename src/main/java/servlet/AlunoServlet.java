@@ -30,7 +30,11 @@ public class AlunoServlet extends HttpServlet {
 
 		switch(request.getParameter("operacao")) {
 		case "cadastrar":
-			addAluno(request, response);
+			try {
+				addAluno(request, response);
+			} catch (IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		case "buscar":
 			try {
@@ -40,7 +44,11 @@ public class AlunoServlet extends HttpServlet {
 			}
 			break;
 		case "editar":
-			updateAluno(request, response);
+			try {
+				updateAluno(request, response);
+			} catch(IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		}
 	}

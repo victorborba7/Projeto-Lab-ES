@@ -44,7 +44,11 @@ public class DojoServlet extends HttpServlet {
 			}
 			break;
 		case "editar":
-			updateDojo(request, response);
+			try {
+				updateDojo(request, response);
+			} catch (IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		}
 		

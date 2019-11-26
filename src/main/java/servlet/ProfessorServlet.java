@@ -44,7 +44,11 @@ public class ProfessorServlet extends HttpServlet {
 			}
 			break;
 		case "editar":
-			updateProfessor(request, response);
+			try {
+				updateProfessor(request, response);
+			} catch(IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		}
 		

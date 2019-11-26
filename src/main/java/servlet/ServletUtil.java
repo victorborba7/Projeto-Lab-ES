@@ -70,7 +70,6 @@ public class ServletUtil {
 		Entidade e = new Entidade();
 		List<Entidade> ent = new ArrayList<Entidade>();
 		try {
-			System.out.println(request.getParameter("nome_dojo"));
 			e = entidade.getEntidade(request.getParameter("nome_dojo"));
 			ent.add(e);
 			professor.setEntidades(ent);
