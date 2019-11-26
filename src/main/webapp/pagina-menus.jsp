@@ -1,6 +1,6 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
 	<meta charset="UTF-8">
@@ -54,7 +54,7 @@
 </div>
         <div class="page-content-wrapper">
             <div class="container-fluid" id="padrao">
-                <div id="bem_vindo" style="/*display: none;*/"><a class="btn btn-link" role="button" id="menu-toggle-bem-vindo" href="#menu-toggle-bem-vindo"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="bem_vindo" style="/*display: none;*/"><a class="btn btn-link" role="button" id="menu-toggle-bem-vindo" href="#menu-toggle-bem-vindo"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div>
@@ -63,10 +63,10 @@
                         </div>
                     </div>
                     <div class="row text-center">
-                        <div class="col" style="margin-top: 100px;"><img src="assets/img/pagina_inicial.png" height="500px" width="75%" style="filter: blur(0px) contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%);"></div>
+                        <div class="col" style="margin-top: 100px;"><img src="assets/img/pagina_inicial.png" alt="Logo Judocas" height="500px" width="75%" style="filter: blur(0px) contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%);"></div>
                     </div>
                 </div>
-                <div id="cadastrar_dojo" style="display: none;width: 100%;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-dojo" href="#menu-toggle2"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="cadastrar_dojo" style="display: none;width: 100%;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-dojo" href="#menu-toggle2"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row" style="width: 100%;">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-bottom: 50px;">
                             <div>
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="administrar_dojo" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-administrar-dojo" href="#menu-toggle-administrar-dojo"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="administrar_dojo" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-administrar-dojo" href="#menu-toggle-administrar-dojo"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div>
@@ -153,7 +153,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="administrar_professor" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-administrar-professor" href="#menu-toggle-administrar-professor"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="administrar_professor" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-administrar-professor" href="#menu-toggle-administrar-professor"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div>
@@ -222,7 +222,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="administrar_aluno" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-administrar-aluno" href="#menu-toggle-administrar-aluno"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="administrar_aluno" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-administrar-aluno" href="#menu-toggle-administrar-aluno"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row">
                         <div class="col-md-12">
                             <div>

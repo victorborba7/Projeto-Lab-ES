@@ -16,7 +16,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "filiado")
 public class Filiado {
-	public static Long qtd = 0L;
+	private static final Long qtd = 0L;
 	@Id
 	@GeneratedValue
 	@Column(name = "id")

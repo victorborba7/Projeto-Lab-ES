@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,8 +20,9 @@ import model.bean.Aluno;
 @WebServlet("/aluno/*")
 public class AlunoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private AlunoBOImpl aluno = new AlunoBOImpl();
-	private ServletUtil util = new ServletUtil();
+	private final AlunoBOImpl aluno = new AlunoBOImpl();
+	private final ServletUtil util = new ServletUtil();
+	private final Logger logger = Logger.getGlobal();
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -31,7 +33,11 @@ public class AlunoServlet extends HttpServlet {
 			addAluno(request, response);
 			break;
 		case "buscar":
-			searchAluno(request, response);
+			try {
+				searchAluno(request, response);
+			} catch(IOException e) {
+				logger.info(e.getMessage());
+			}
 			break;
 		case "editar":
 			updateAluno(request, response);
@@ -48,7 +54,7 @@ public class AlunoServlet extends HttpServlet {
 			aluno.createAluno(a);
 			response.getWriter().write("true");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			response.getWriter().write("false");
 		}
 	}
@@ -64,7 +70,7 @@ public class AlunoServlet extends HttpServlet {
 			request.setAttribute("result", result);
 			response.getWriter().write("Aluno: " + result);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			response.getWriter().write("false");
 		}
 	}
@@ -81,7 +87,7 @@ public class AlunoServlet extends HttpServlet {
 			aluno.updateAluno(newAluno);
 			response.getWriter().write("true");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			response.getWriter().write("false");
 		}
 	}

@@ -1,6 +1,7 @@
 package business;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import model.bean.Entidade;
 import model.dao.DAO;
@@ -9,6 +10,7 @@ import model.dao.DAOImpl;
 public class EntidadeBOImpl implements EntidadeBO {
 	
 	private static DAO<Entidade> dao = new DAOImpl<Entidade>(Entidade.class);
+	private Logger logger = Logger.getGlobal();
 
 	public void createEntidade(Entidade entidade) throws Exception {
 		System.out.println("EntidadeBOImpl.createEntidade()");
@@ -18,7 +20,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao cadastrar o dojo!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar o dojo.");
 		}
 	}
@@ -31,7 +33,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao listar entidades!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao listar entidades.");
 		}
 		return result;
@@ -45,7 +47,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao buscar entidades!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao buscar entidades.");
 		}
 		return result;
@@ -58,7 +60,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao atualizar a entidade!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar a entidade.");
 		}
 	}
@@ -71,7 +73,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao buscar a entidade!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao atualizar a entidade.");
 		}
 		return enti;

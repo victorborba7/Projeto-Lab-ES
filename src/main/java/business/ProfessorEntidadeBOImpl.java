@@ -1,6 +1,8 @@
 package business;
 
 import java.util.List;
+import java.util.logging.Logger;
+
 import model.bean.ProfessorEntidade;
 import model.dao.DAO;
 import model.dao.DAOImpl;
@@ -8,6 +10,7 @@ import model.dao.DAOImpl;
 public class ProfessorEntidadeBOImpl implements ProfessorEntidadeBO {
 
 	DAO<ProfessorEntidade> dao = new DAOImpl<ProfessorEntidade>(ProfessorEntidade.class);
+	private Logger logger = Logger.getGlobal();
 
 	public void createProfessorEntidade(List<ProfessorEntidade> relacionamentos)
 	throws Exception {
@@ -20,7 +23,7 @@ public class ProfessorEntidadeBOImpl implements ProfessorEntidadeBO {
 			throw new IllegalArgumentException( "Ocorreu um erro ao associar o professor às suas entidades!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.info(e.getMessage());
 			throw new Exception("Desculpe, ocorreu um erro desconhecido ao salvar os relacionamentos.");
 		}
 	}
