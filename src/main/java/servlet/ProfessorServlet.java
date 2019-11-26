@@ -57,10 +57,10 @@ public class ProfessorServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			professor.createProfessor(prof);
-			response.getWriter().write("Cadastrado com sucesso");
+			response.getWriter().write("true");
 		} catch (Exception e) {
 			logger.info(e.getMessage());
-			response.getWriter().write("Não foi possivel realizar o cadastro");
+			response.getWriter().write("false");
 		}
 	}
 	
@@ -76,11 +76,11 @@ public class ProfessorServlet extends HttpServlet {
 			response.getWriter().write("Professor: " + result);
 		} catch (Exception e) {
 			logger.info(e.getMessage());
-			response.getWriter().write("Não foi possivel realizar o cadastro");
+			response.getWriter().write("false");
 		}
 	}
 	
-	private void updateProfessor(HttpServletRequest request, HttpServletResponse response) {
+	private void updateProfessor(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Professor prof = new Professor();
 		Professor newProf = new Professor();
 		response.setContentType("text/plain");
@@ -90,8 +90,10 @@ public class ProfessorServlet extends HttpServlet {
 			prof = util.criarProfessor(request);
 			newProf.copyProperties(prof);
 			professor.updateProfessor(prof);
+			response.getWriter().write("true");
 		} catch (Exception e) {
 			logger.info(e.getMessage());
+			response.getWriter().write("false");
 		}
 		
 	}
