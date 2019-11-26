@@ -39,16 +39,17 @@ public class AlunoServlet extends HttpServlet {
 		}
 	}
 	
-	private void addAluno(HttpServletRequest request, HttpServletResponse response) {
+	private void addAluno(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Aluno a = new Aluno();
 		a = util.criarAluno(request);
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
 			aluno.createAluno(a);
-			response.getWriter().write("Cadastrado com sucesso");
+			response.getWriter().write("true");
 		} catch (Exception e) {
 			e.printStackTrace();
+			response.getWriter().write("false");
 		}
 	}
 	
@@ -64,11 +65,11 @@ public class AlunoServlet extends HttpServlet {
 			response.getWriter().write("Aluno: " + result);
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.getWriter().write("Não foi possivel realizar o cadastro");
+			response.getWriter().write("false");
 		}
 	}
 	
-	private void updateAluno(HttpServletRequest request, HttpServletResponse response) {
+	private void updateAluno(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Aluno a = new Aluno();
 		Aluno newAluno = new Aluno();
 		response.setContentType("text/plain");
@@ -78,8 +79,10 @@ public class AlunoServlet extends HttpServlet {
 			a = util.criarAluno(request);
 			newAluno.copyProperties(a);
 			aluno.updateAluno(newAluno);
+			response.getWriter().write("true");
 		} catch (Exception e) {
 			e.printStackTrace();
+			response.getWriter().write("false");
 		}
 	}
 }

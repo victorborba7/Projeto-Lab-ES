@@ -47,10 +47,10 @@ public class DojoServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		try {
 			entidade.createEntidade(ent);
-			response.getWriter().write("Cadastrado com sucesso");
+			response.getWriter().write("true");
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.getWriter().write("Não foi possivel realizar o cadastro");
+			response.getWriter().write("false");
 		}
 	}
 	
@@ -66,11 +66,11 @@ public class DojoServlet extends HttpServlet {
 			response.getWriter().write("Dojo: " + result);
 		} catch (Exception e) {
 			e.printStackTrace();
-			response.getWriter().write("Não foi possivel realizar o cadastro");
+			response.getWriter().write("false");
 		}
 	}
 	
-	private void updateDojo(HttpServletRequest request, HttpServletResponse response) {
+	private void updateDojo(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Entidade ent = new Entidade();
 		Entidade newEnt = new Entidade();
 		response.setContentType("text/plain");
@@ -80,8 +80,10 @@ public class DojoServlet extends HttpServlet {
 			ent = util.criarEntidade(request);
 			newEnt.copyProperties(ent);
 			entidade.updateEntidade(newEnt);
+			response.getWriter().write("true");
 		} catch (Exception e) {
 			e.printStackTrace();
+			response.getWriter().write("false");
 		}
 		
 	}
