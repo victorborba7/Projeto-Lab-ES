@@ -55,6 +55,7 @@ $(document).ready(function(){
 						if(data == "false"){
 							swal("Ops!!", "Aluno não encontrado!", "error");
 						}else{
+							var obj = JSON.stringify(data);
 							$("#txb_nome_aluno_cadastro").val(obj.match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
 							$("#txb_nome_dojo_aluno").val(obj.replace(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/,"").match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
 							$("#txb_nome_professor_aluno").val(obj.replace(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/,"").replace(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/,"").match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
