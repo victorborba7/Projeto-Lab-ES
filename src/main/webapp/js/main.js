@@ -55,20 +55,20 @@ $(document).ready(function(){
 						if(data == "false"){
 							swal("Ops!!", "Aluno não encontrado!", "error");
 						}else{
-							var obj = data;
-							$("#txb_nome_aluno_cadastro").val(obj.match(/(?:(?=\"nome\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_nome_dojo_aluno").val(obj.replace(/(?:(?=\"nome\"\:\").+?\"\:\")(.+?)(?=\"\,)/,"").match(/(?:(?=\"nome\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_nome_professor_aluno").val(obj.replace(/(?:(?=\"nome\"\:\").+?\"\:\")(.+?)(?=\"\,)/,"").replace(/(?:(?=\"nome\"\:\").+?\"\:\")(.+?)(?=\"\,)/,"").match(/(?:(?=\"nome\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_registro_cbj_aluno_cadastro").val(obj.match(/(?:(?=\"registroCbj\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_rg_aluno_cadastro").val(obj.match(/(?:(?=\"rg\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_cpf_aluno_cadastro").val(obj.match(/(?:(?=\"cpf\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_celular_aluno_cadastro").val(obj.match(/(?:(?=\"telefone1\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_rua_aluno_cadastro").val(obj.match(/(?:(?=\"rua\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_numero_aluno_cadastro").val(obj.match(/(?:(?=\"numero\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_bairro_aluno_cadastro").val(obj.match(/(?:(?=\"bairro\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_cidade_aluno_cadastro").val(obj.match(/(?:(?=\"cidade\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_estado_aluno_cadastro").val(obj.match(/(?:(?=\"estado\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
-							$("#txb_cep_aluno_cadastro").val(obj.match(/(?:(?=\"cep\"\:\").+?\"\:\")(.+?)(?=\"\,)/)[1]);
+							var obj = JSON.stringify(data);
+							$("#txb_nome_aluno_cadastro").val(obj.match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_nome_dojo_aluno").val(obj.replace(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/,"").match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_nome_professor_aluno").val(obj.replace(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/,"").replace(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/,"").match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_registro_cbj_aluno_cadastro").val(obj.match(/(?:(?=\\"registroCbj\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_rg_aluno_cadastro").val(obj.match(/(?:(?=\\"rg\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_cpf_aluno_cadastro").val(obj.match(/(?:(?=\\"cpf\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_celular_aluno_cadastro").val(obj.match(/(?:(?=\\"telefone1\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_rua_aluno_cadastro").val(obj.match(/(?:(?=\\"rua\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_numero_aluno_cadastro").val(obj.match(/(?:(?=\\"numero\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_bairro_aluno_cadastro").val(obj.match(/(?:(?=\\"bairro\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_cidade_aluno_cadastro").val(obj.match(/(?:(?=\\"cidade\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_estado_aluno_cadastro").val(obj.match(/(?:(?=\\"estado\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
+							$("#txb_cep_aluno_cadastro").val(obj.match(/(?:(?=\\"cep\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
 							$("#txb_dt_filiacao_aluno_edicao").val(window.localStorage.getItem(obj.match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]));
 							controlarCamposDesabilitadosAlunos(false);
 						}
