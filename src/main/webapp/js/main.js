@@ -70,7 +70,7 @@ $(document).ready(function(){
 							$("#txb_estado_aluno_cadastro").val(obj.match(/(?:(?=\\"estado\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
 							$("#txb_cep_aluno_cadastro").val(obj.match(/(?:(?=\\"cep\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]);
 							$("#txb_dt_filiacao_aluno_edicao").val(window.localStorage.getItem(obj.match(/(?:(?=\\"nome\\"\:\\").+?\\"\:\\")(.+?)(?=\\"\,)/)[1]));
-							controlarCamposDesabilitadosDojos(false);
+							controlarCamposDesabilitadosAlunos(false);
 						}
 					});
 		}
