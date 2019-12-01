@@ -71,6 +71,7 @@ public class AlunoServlet extends HttpServlet {
 		Aluno a = new Aluno();
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
+		
 		try {
 			a = aluno.getAluno(request.getParameter("nome_aluno_buscar"));
 			ObjectMapper mapper = new ObjectMapper();
