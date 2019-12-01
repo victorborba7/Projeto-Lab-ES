@@ -97,6 +97,7 @@ public class ProfessorServlet extends HttpServlet {
 			response.getWriter().write("true");
 		} catch (Exception e) {
 			logger.info(e.getMessage());
+			System.out.println(e.getStackTrace());
 			response.getWriter().write("false");
 		}
 		
