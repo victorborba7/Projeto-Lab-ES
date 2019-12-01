@@ -89,7 +89,7 @@ public class AlunoServlet extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
-			newAluno = aluno.getAluno(request.getParameter("nome_aluno"));
+			newAluno = aluno.getAluno(request.getParameter("nome"));
 			a = util.criarAluno(request);
 			newAluno.copyProperties(a);
 			aluno.updateAluno(newAluno);
