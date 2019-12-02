@@ -27,13 +27,6 @@ public class DAOImpl<E> implements DAO<E> {
 		this.clazz = clazz;
 	}
 	
-	@SuppressWarnings("unchecked")
-	public List<E> list() {
-		List<E> objects = new ArrayList<E>();
-		objects = em.createQuery("SELECT c FROM clazz c").getResultList();
-		return objects;
-	}
-	
     public void save(E object){
     	em.getTransaction().begin();
     	em.merge(object);
@@ -52,5 +45,9 @@ public class DAOImpl<E> implements DAO<E> {
     
     public List<E> search(String query) {
 		return em.createNamedQuery(query, clazz).getResultList();
+	}
+    
+	public List<E> list(String query, String name) {
+		return em.createNamedQuery(name, clazz).setParameter("name", "%"+name+"%").getResultList();
 	}
 }

@@ -55,7 +55,6 @@ public class ServletUtil {
 		f.setDataNascimento(null);
 		f.setEmail(null);
 		f.setEndereco(criarEndereco(request));
-		f.setFaixas(null);
 		f.setNome(request.getParameter("nome"));
 		f.setObservacoes(null);
 		f.setRegistroCbj(request.getParameter("registro_cbj"));

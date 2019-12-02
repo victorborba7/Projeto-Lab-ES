@@ -55,9 +55,6 @@ public class Filiado {
 	@OneToOne(cascade=CascadeType.ALL)
 	Endereco endereco = new Endereco();
 	
-	@OneToMany(cascade=CascadeType.ALL)
-	List<Faixa> faixas = new ArrayList<Faixa>();
-	
 	public String toString(){
 		String filiado = "Nome: "+nome+
 						"\nRegistroCbj: "+registroCbj+
@@ -142,12 +139,6 @@ public class Filiado {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	public List<Faixa> getFaixas() {
-		return faixas;
-	}
-	public void setFaixas(List<Faixa> faixas) {
-		this.faixas = faixas;
-	}
 	public String getRg() {
 		return rg;
 	}
@@ -177,8 +168,7 @@ public class Filiado {
 	}
 
 	public Filiado(Long filiado_id, String nome, String registroCbj, LocalDate dataNascimento, LocalDate dataCadastro,
-			String telefone1, String telefone2, String email, String cpf, String observacoes, String rg, Endereco endereco,
-			List<Faixa> faixas) {
+			String telefone1, String telefone2, String email, String cpf, String observacoes, String rg, Endereco endereco) {
 		super();
 		this.filiado_id = filiado_id;
 		this.nome = nome;
@@ -192,7 +182,6 @@ public class Filiado {
 		this.observacoes = observacoes;
 		this.rg = rg;
 		this.endereco = endereco;
-		this.faixas = faixas;
 	}
 	
 	public Filiado() {}

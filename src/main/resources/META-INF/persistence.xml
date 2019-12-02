@@ -13,7 +13,6 @@
 		<class>model.bean.Filiado</class>
 		<class>model.bean.Endereco</class>
 		<class>model.bean.Rg</class>
-		<class>model.bean.Faixa</class>
 		
 		<properties>
 			<property name="hibernate.dialect"

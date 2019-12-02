@@ -57,6 +57,12 @@ public class DojoServlet extends HttpServlet {
 			} catch (IOException e) {
 				logger.info(e.getMessage());
 			}
+		case "filtrar":
+			try {
+				listaDojoNome(request, response);
+			} catch (IOException e) {
+				logger.info(e.getMessage());
+			}
 		}
 		
 	}
@@ -118,6 +124,24 @@ public class DojoServlet extends HttpServlet {
 			String result = mapper.writeValueAsString(dojos);
 			request.setAttribute("result", result);
 			System.out.println(result);
+			response.getWriter().write("Dojos: " + result);
+		} catch (IOException e) {
+			logger.info(e.getMessage());
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+		}
+	}
+	
+	private void listaDojoNome(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		List<Entidade> dojos;
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			dojos = entidade.searchEntidade(request.getParameter("nome"));
+			ObjectMapper mapper = new ObjectMapper();
+			String result = mapper.writeValueAsString(dojos);
+			System.out.println(result);
+			request.setAttribute("result", result);
 			response.getWriter().write("Dojos: " + result);
 		} catch (IOException e) {
 			logger.info(e.getMessage());

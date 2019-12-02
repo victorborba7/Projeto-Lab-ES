@@ -4,12 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "endereco")
-@NamedQuery(name = "enderecoRua", query = "SELECT e FROM Endereco e WHERE e.rua = :name")
+@NamedQueries( value = { @NamedQuery(name = "listEndereco", query = "SELECT e FROM Endereco e"),
+		@NamedQuery(name = "enderecoRua", query = "SELECT e FROM Endereco e WHERE e.rua = :name")
+})
 public class Endereco {
 	@Id
 	@GeneratedValue

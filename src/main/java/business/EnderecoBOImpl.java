@@ -50,7 +50,7 @@ public class EnderecoBOImpl implements EnderecoBO {
 	public List<Endereco> listAll() throws Exception {
 		List<Endereco> result;
 		try {
-			result = dao.list();
+			result = dao.search("listEndereco");
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException("Ocorreu um erro ao obter a lista de enderecos.");
 		} catch (Exception e) {

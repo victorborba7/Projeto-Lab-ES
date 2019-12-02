@@ -10,7 +10,7 @@ public interface DAO<E> {
 	public abstract void delete(E object)
 	throws IllegalArgumentException;
 
-	public abstract List<E> list()
+	public abstract List<E> list(String query, String name)
 	throws IllegalArgumentException;
 
 	public abstract E get(String name, String query)
