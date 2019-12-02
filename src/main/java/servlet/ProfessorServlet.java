@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -50,8 +51,14 @@ public class ProfessorServlet extends HttpServlet {
 				logger.info(e.getMessage());
 			}
 			break;
+		case "listar":
+			try {
+				listarProfessores(request, response);
+			} catch(IOException e) {
+				logger.info(e.getMessage());
+			}
+			break;
 		}
-		
 	}
 	
 	private void addProfessor(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -97,9 +104,24 @@ public class ProfessorServlet extends HttpServlet {
 			response.getWriter().write("true");
 		} catch (Exception e) {
 			logger.info(e.getMessage());
-			System.out.println(e.getStackTrace());
 			response.getWriter().write("false");
 		}
 		
+	}
+	private void listarProfessores(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		List<Professor> profs;
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UFT-8");
+		try {
+			profs = professor.listAll();
+			ObjectMapper mapper = new ObjectMapper();
+			String result = mapper.writeValueAsString(profs);
+			request.setAttribute("result", result);
+			response.getWriter().write("Professores: " + result);
+		} catch (IOException e) {
+			logger.info(e.getMessage());
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+		}
 	}
 }

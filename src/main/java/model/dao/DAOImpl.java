@@ -45,7 +45,7 @@ public class DAOImpl<E> implements DAO<E> {
     	em.flush();
     	em.getTransaction().commit();
     }
-
+    
     public void delete(E object) throws IllegalArgumentException {
         E newE = em.merge(object);
         em.remove(newE);
