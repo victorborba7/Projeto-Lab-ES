@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
@@ -50,6 +51,12 @@ public class DojoServlet extends HttpServlet {
 				logger.info(e.getMessage());
 			}
 			break;
+		case "listar":
+			try {
+				listarDojo(request, response);
+			} catch (IOException e) {
+				logger.info(e.getMessage());
+			}
 		}
 		
 	}
@@ -98,6 +105,23 @@ public class DojoServlet extends HttpServlet {
 		} catch (Exception e) {
 			logger.info(e.getMessage());
 			response.getWriter().write("false");
+		}
+	}
+	
+	private void listarDojo(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		List<Entidade> dojos;
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			dojos = entidade.listAll();
+			ObjectMapper mapper = new ObjectMapper();
+			String result = mapper.writeValueAsString(dojos);
+			request.setAttribute("result", result);
+			response.getWriter().write("Dojos: " + result);
+		} catch (IOException e) {
+			logger.info(e.getMessage());
+		} catch (Exception e) {
+			logger.info(e.getMessage());
 		}
 	}
 }
