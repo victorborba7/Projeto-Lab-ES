@@ -13,8 +13,15 @@ function controlarCamposDesabilitadosProfessores(val){
 function limparCampos(){
 	$("input").val("");
 }
-
+//
 function generateTable(id, data){
+	$.post("/judocas/professor/listar.do",
+			{
+				operacao: "listar"
+			},
+			function(data){
+				console.info(data);
+			});
 	var table = $('<table>');
 	for(i=0; i<3; i++){
 		var row = $('<tr>')

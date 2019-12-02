@@ -427,4 +427,34 @@ $(document).ready(function(){
 	});
 	
 	//Fim Professor
+	
+	$("#btn_carregar_professores").click(function(){
+		$.post("/judocas/professor/listar.do",
+				{
+					operacao: "listar"
+				},
+				function(data){
+					console.info(data);
+				});
+	});
+	
+	$("#btn_carregar_alunos").click(function(){
+		$.post("/judocas/aluno/listar.do",
+				{
+					operacao: "listar"
+				},
+				function(data){
+					console.info(data);
+				});
+	});
+	
+	$("#btn_carregar_dojos").click(function(){
+		$.post("/judocas/dojo/listar.do",
+				{
+					operacao: "listar"
+				},
+				function(data){
+					console.info(data);
+				});
+	});
 });

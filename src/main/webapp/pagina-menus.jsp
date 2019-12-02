@@ -66,6 +66,9 @@
                         <div class="col" style="margin-top: 100px;"><img src="assets/img/pagina_inicial.png" alt="Logo Judocas" height="500px" width="75%" style="filter: blur(0px) contrast(100%) grayscale(0%) hue-rotate(0deg) invert(0%);"></div>
                     </div>
                 </div>
+                <button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_carregar_alunos">Carregar Alunos</button>
+                <button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_carregar_dojos">Carregar Dojos</button>
+                <button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;padding: 8px 14px;margin-top: 50px;" id="btn_carregar_professores">Carregar Professores</button>
                 <div id="cadastrar_dojo" style="display: none;width: 100%;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-dojo" href="#menu-toggle2"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row" style="width: 100%;">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="margin-bottom: 50px;">
