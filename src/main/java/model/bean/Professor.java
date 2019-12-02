@@ -8,13 +8,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="professor")
-@NamedQuery(name = "professorName", query = "SELECT p FROM Professor p WHERE p.filiado.nome = :name")
+@NamedQueries(value = { 
+		@NamedQuery(name = "listProfessor", query = "SELECT p FROM Professor p"),
+		@NamedQuery(name = "professorName", query = "SELECT p FROM Professor p WHERE p.filiado.nome = :name")})
 public class Professor {
 	
 	@Id

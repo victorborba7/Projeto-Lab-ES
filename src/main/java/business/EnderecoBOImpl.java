@@ -38,7 +38,7 @@ public class EnderecoBOImpl implements EnderecoBO {
 	public List<Endereco> searchEndereco(Endereco endereco) throws Exception {
 		List<Endereco> result;
 		try {
-			result = dao.search(endereco);
+			result = dao.search("");
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException("Ocorreu um erro ao salvar os dados do endereco.");
 		} catch (Exception e) {

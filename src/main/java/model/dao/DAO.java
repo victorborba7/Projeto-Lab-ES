@@ -16,7 +16,7 @@ public interface DAO<E> {
 	public abstract E get(String name, String query)
 	throws IllegalArgumentException;
 
-	public abstract List<E> search(E object)
+	public abstract List<E> search(String query)
 	throws IllegalArgumentException;
 
 }

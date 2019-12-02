@@ -28,7 +28,7 @@ public class ProfessorServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println(request.getParameter("operacao"));
 		switch(request.getParameter("operacao")) {
 		case "cadastrar":
 			try {
@@ -117,6 +117,7 @@ public class ProfessorServlet extends HttpServlet {
 			ObjectMapper mapper = new ObjectMapper();
 			String result = mapper.writeValueAsString(profs);
 			request.setAttribute("result", result);
+			System.out.println(result);
 			response.getWriter().write("Professores: " + result);
 		} catch (IOException e) {
 			logger.info(e.getMessage());

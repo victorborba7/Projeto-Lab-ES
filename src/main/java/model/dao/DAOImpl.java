@@ -7,7 +7,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 public class DAOImpl<E> implements DAO<E> {
 
@@ -28,17 +27,13 @@ public class DAOImpl<E> implements DAO<E> {
 		this.clazz = clazz;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<E> list() {
-		
 		List<E> objects = new ArrayList<E>();
+		objects = em.createQuery("SELECT c FROM clazz c").getResultList();
 		return objects;
 	}
 	
-	public List<E> search(E object) {
-		List<E> objects = em.createQuery("SELECT c FROM aluno c").getResultList();
-		return objects;		
-	}
-
     public void save(E object){
     	em.getTransaction().begin();
     	em.merge(object);
@@ -51,8 +46,11 @@ public class DAOImpl<E> implements DAO<E> {
         em.remove(newE);
     }
 
-    @SuppressWarnings("unchecked")
 	public E get(String name, String query) throws IllegalArgumentException {
     	return (E) em.createNamedQuery(query, clazz).setParameter("name", name).getSingleResult();
     }
+    
+    public List<E> search(String query) {
+		return em.createNamedQuery(query, clazz).getResultList();
+	}
 }

@@ -28,7 +28,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 	public List<Entidade> listAll() throws Exception {
 		List<Entidade> result;
 		try {
-			result = dao.list();
+			result = dao.search("listDojo");
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao listar entidades!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
@@ -42,7 +42,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 	public List<Entidade> searchEntidade(Entidade entidade) throws Exception {
 		List<Entidade> result;
 		try {
-			result = dao.search(entidade);
+			result = dao.search("");
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao buscar entidades!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");

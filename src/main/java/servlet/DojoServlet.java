@@ -117,6 +117,7 @@ public class DojoServlet extends HttpServlet {
 			ObjectMapper mapper = new ObjectMapper();
 			String result = mapper.writeValueAsString(dojos);
 			request.setAttribute("result", result);
+			System.out.println(result);
 			response.getWriter().write("Dojos: " + result);
 		} catch (IOException e) {
 			logger.info(e.getMessage());

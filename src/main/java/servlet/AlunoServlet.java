@@ -117,6 +117,7 @@ public class AlunoServlet extends HttpServlet {
 			ObjectMapper mapper = new ObjectMapper();
 			String result = mapper.writeValueAsString(alunos);
 			request.setAttribute("result", result);
+			System.out.println(result);
 			response.getWriter().write("Alunos: " + result);;
 		} catch (IOException e) {
 			logger.info(e.getMessage());
