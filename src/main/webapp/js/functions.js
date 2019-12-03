@@ -21,7 +21,7 @@ function generateTableDojos(filtro, param){
 				nome_dojo_filtrar: filtro
 			},
 			function(data){
-				var dojos = JSON.parse(data.replace("Dojos: ", ""));
+				var dojos = JSON.parse(data.replace("Dojos: ", "").replace(/(?=Dojos\:).*/g, ""));
 				var table = $('<table>');
 				var row = $('<tr>');
 				var cell = $('<th>').text('Nome');
@@ -41,7 +41,6 @@ function generateTableDojos(filtro, param){
 				    row.append(cell);
 				    table.append(row);
 				}
-				console.info(table);
 				$("#table_dojos").empty().append(table);
 			});
 }
@@ -53,7 +52,7 @@ function generateTableAlunos(filtro, param){
 				nome_aluno_filtrar: filtro
 			},
 			function(data){
-				var alunos = JSON.parse(data.replace("Alunos: ", ""));
+				var alunos = JSON.parse(data.replace("Alunos: ", "").replace(/(?=Alunos\:).*/g, ""));
 				var table = $('<table>');
 				var row = $('<tr>');
 				var cell = $('<th>').text('Nome');
@@ -100,7 +99,6 @@ function generateTableProfessores(filtro, param){
 				nome_professor_filtrar: filtro
 			},
 			function(data){
-				console.info(data);
 			});
 }
 
