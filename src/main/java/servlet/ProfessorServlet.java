@@ -97,7 +97,7 @@ public class ProfessorServlet extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
-			newProf = professor.getProfessor(request.getParameter("nome"));
+			newProf = professor.getProfessor(request.getParameter("nome_professor_filtrar"));
 			prof = util.criarProfessor(request);
 			newProf.copyProperties(prof);
 			professor.updateProfessor(prof);
