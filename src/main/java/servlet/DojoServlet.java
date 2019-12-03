@@ -57,12 +57,14 @@ public class DojoServlet extends HttpServlet {
 			} catch (IOException e) {
 				logger.info(e.getMessage());
 			}
+			break;
 		case "filtrar":
 			try {
 				listaDojoNome(request, response);
 			} catch (IOException e) {
 				logger.info(e.getMessage());
 			}
+			break;
 		}
 		
 	}

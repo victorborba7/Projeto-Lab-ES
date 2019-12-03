@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import business.ProfessorBOImpl;
+import model.bean.Entidade;
 import model.bean.Professor;
 
 /**
@@ -55,6 +56,13 @@ public class ProfessorServlet extends HttpServlet {
 			try {
 				listarProfessores(request, response);
 			} catch(IOException e) {
+				logger.info(e.getMessage());
+			}
+			break;
+		case "filtrar":
+			try {
+				listaProfessorNome(request, response);
+			} catch (IOException e) {
 				logger.info(e.getMessage());
 			}
 			break;
@@ -121,6 +129,25 @@ public class ProfessorServlet extends HttpServlet {
 			System.out.println(result);
 			response.addHeader("result", result);
 			response.getWriter().write("Professores: " + result);
+		} catch (IOException e) {
+			logger.info(e.getMessage());
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+		}
+	}
+	
+	private void listaProfessorNome(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		List<Professor> profs;
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			profs = professor.searchProfessor(request.getParameter("nome_dojo_filtrar"));
+			ObjectMapper mapper = new ObjectMapper();
+			String result = mapper.writeValueAsString(profs);
+			System.out.println(result);
+			request.setAttribute("result", result);
+			response.addHeader("result", result);
+			response.getWriter().write("Dojos: " + result);
 		} catch (IOException e) {
 			logger.info(e.getMessage());
 		} catch (Exception e) {

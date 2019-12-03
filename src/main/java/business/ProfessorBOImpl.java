@@ -53,11 +53,11 @@ public class ProfessorBOImpl implements ProfessorBO {
 		return result;
 	}
 
-	public List<Professor> searchProfessor(Professor professor)
+	public List<Professor> searchProfessor(String name)
 			throws Exception {
 		List<Professor> result;
 		try {
-			result = dao.search("listProfessor");
+			result = dao.list("listNameProfessor", name);
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException("Ocorreu um erro ao buscar os professores."
 				+ " Verifique se todos os dados foram preenchidos corretamente!");
