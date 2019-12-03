@@ -41,6 +41,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 
 	public List<Entidade> searchEntidade(String name) throws Exception {
 		List<Entidade> result;
+		System.out.println("Value of name: " + name);
 		try {
 			result = dao.list("dojoName", name);
 		} catch (IllegalArgumentException e) {
