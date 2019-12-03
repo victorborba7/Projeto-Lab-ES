@@ -137,7 +137,8 @@ public class DojoServlet extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
-			dojos = entidade.searchEntidade(request.getParameter("nome"));
+			System.out.println(request.getParameter("nome_dojo_filtrar"));
+			dojos = entidade.searchEntidade(request.getParameter("nome_dojo_filtrar"));
 			ObjectMapper mapper = new ObjectMapper();
 			String result = mapper.writeValueAsString(dojos);
 			System.out.println(result);

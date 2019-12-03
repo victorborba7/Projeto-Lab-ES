@@ -57,6 +57,12 @@ public class AlunoServlet extends HttpServlet {
 			} catch (IOException e) {
 				logger.info(e.getMessage());
 			}
+		case "filtrar":
+			try {
+				listAlunoName(request, response);
+			} catch (IOException e) {
+				logger.info(e.getMessage());
+			}
 		}
 	}
 	
@@ -119,6 +125,24 @@ public class AlunoServlet extends HttpServlet {
 			request.setAttribute("result", result);
 			System.out.println(result);
 			response.getWriter().write("Alunos: " + result);;
+		} catch (IOException e) {
+			logger.info(e.getMessage());
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+		}
+	}
+	
+	private void listAlunoName(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		List<Aluno> alunos;
+		response.setContentType("text/plain");
+		response.setCharacterEncoding("UTF-8");
+		try {
+			alunos = aluno.searchAluno(request.getParameter("nome_aluno_filtrar"));
+			ObjectMapper mapper = new ObjectMapper();
+			String result = mapper.writeValueAsString(alunos);
+			request.setAttribute("result", result);
+			System.out.println(result);
+			response.getWriter().write("Alunos: " + result);
 		} catch (IOException e) {
 			logger.info(e.getMessage());
 		} catch (Exception e) {
