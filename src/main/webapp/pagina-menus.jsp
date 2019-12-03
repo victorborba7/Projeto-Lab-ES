@@ -122,7 +122,7 @@
                             </div>
                         </div>
                         <div class="col-sm-11 col-md-11 col-lg-11 col-xl-11 m-auto" style="filter: blur(0px);">
-							<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_dojo_filtrar" placeholder="Nome do dojo" id="txb_adm_nome_dojo_filtrar"></div>
+							<div class="form-group d-inline-block" style="width: 82%;"><input class="form-control" type="text" name="nome_dojo_filtrar" placeholder="Nome do dojo" id="txb_nome_dojo_filtrar"></div>
 						   	<div class="form-group text-center d-inline-block float-right" style="margin-left: 15px;"><button class="btn btn-primary" style="background-color: rgb(0,0,0);font-size: 20px;margin-top: 0px;padding-top: 3px;padding-bottom: 3px;" id="btn_nome_dojo_filtrar">FILTRAR</button></div>
                         </div>
                         <div id="table_dojos" class="col-xl-11 m-auto">

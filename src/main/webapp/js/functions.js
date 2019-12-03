@@ -41,7 +41,7 @@ function generateTableDojos(filtro){
 				    row.append(cell);
 				    table.append(row);
 				}
-				$("#table_dojos").append(table);
+				$("#table_dojos").empty().append(table);
 			});
 }
 
@@ -88,7 +88,7 @@ function generateTableAlunos(filtro){
 				    row.append(cell);
 				    table.append(row);
 				}
-				$("#table_alunos").append(table);
+				$("#table_alunos").empty().append(table);
 			});
 }
 
