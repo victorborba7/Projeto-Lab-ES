@@ -98,7 +98,29 @@ function generateTableProfessores(filtro, param){
 				operacao: param,
 				nome_professor_filtrar: filtro
 			},
-			function(data){
+			function(data, textStatus, request){
+				var professores = JSON.parse(request.getResponseHeader("result"));
+				console.info(professores);
+				var table = $('<table>');
+				var row = $('<tr>');
+				var cell = $('<th>').text('Nome');
+			    row.append(cell);
+				var cell = $('<th>').text('CBJ');
+			    row.append(cell);
+				var cell = $('<th>').text('Dojo');
+				row.append(cell);
+			    table.append(row);
+				for(i in professores){
+					row = $('<tr>');
+					cell = $('<td>').text(professores[i].filiado.nome);
+				    row.append(cell);
+					cell = $('<td>').text(professores[i].filiado.registroCbj);
+				    row.append(cell);
+					cell = $('<td>').text(professores[i].entidades[0].nome);
+				    row.append(cell);
+				    table.append(row);
+				}
+				$("#table_professores").empty().append(table);
 			});
 }
 
