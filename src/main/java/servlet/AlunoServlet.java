@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -13,7 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import business.AlunoBOImpl;
+import business.ProfessorBOImpl;
 import model.bean.Aluno;
+import model.bean.Entidade;
+import model.bean.Professor;
 
 /**
  * Servlet implementation class AlunoServlet
@@ -22,6 +26,7 @@ import model.bean.Aluno;
 public class AlunoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private final AlunoBOImpl aluno = new AlunoBOImpl();
+	private final ProfessorBOImpl professor = new ProfessorBOImpl();
 	private final ServletUtil util = new ServletUtil();
 	private final Logger logger = Logger.getGlobal();
 	/**
@@ -57,10 +62,18 @@ public class AlunoServlet extends HttpServlet {
 			} catch (IOException e) {
 				logger.info(e.getMessage());
 			}
+			break;
 		case "filtrar":
 			try {
 				listAlunoName(request, response);
 			} catch (IOException e) {
+				logger.info(e.getMessage());
+			}
+			break;
+		case "transformar":
+			try {
+				transformarAluno(request, response);
+			} catch(IOException e) {
 				logger.info(e.getMessage());
 			}
 		}
@@ -143,6 +156,23 @@ public class AlunoServlet extends HttpServlet {
 			request.setAttribute("result", result);
 			System.out.println(result);
 			response.getWriter().write("Alunos: " + result);
+		} catch (IOException e) {
+			logger.info(e.getMessage());
+		} catch (Exception e) {
+			logger.info(e.getMessage());
+		}
+	}
+	
+	private void transformarAluno(HttpServletRequest request, HttpServletResponse response) throws IOException{
+		Aluno oldAluno;
+		Professor newProf = new Professor();
+		try {
+			oldAluno = aluno.getAluno(request.getParameter("nome_aluno"));
+			List<Entidade> ent = new ArrayList<>();
+			ent.add(oldAluno.getEntidade());
+			newProf.setEntidades(ent);
+			newProf.setFiliado(oldAluno.getFiliado());
+			professor.createProfessor(newProf);
 		} catch (IOException e) {
 			logger.info(e.getMessage());
 		} catch (Exception e) {
