@@ -100,7 +100,6 @@ function generateTableProfessores(filtro, param){
 			},
 			function(data, textStatus, request){
 				var professores = JSON.parse(request.getResponseHeader("result"));
-				console.info(professores);
 				var table = $('<table>');
 				var row = $('<tr>');
 				var cell = $('<th>').text('Nome');
