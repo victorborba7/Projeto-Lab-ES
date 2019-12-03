@@ -48,9 +48,6 @@ public class DAOImpl<E> implements DAO<E> {
 	}
     
 	public List<E> list(String query, String name) {
-		System.out.println("Query name: " + query);
-		System.out.println("Query param: " + name);
-		System.out.println("Class: " + clazz);
-		return em.createNamedQuery(query, clazz).setParameter("names", name).getResultList();
+		return em.createNamedQuery(query, clazz).setParameter("names", "%"+name+"%").getResultList();
 	}
 }

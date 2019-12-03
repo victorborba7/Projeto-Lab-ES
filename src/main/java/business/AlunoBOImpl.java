@@ -41,7 +41,7 @@ public class AlunoBOImpl implements AlunoBO {
 	public List<Aluno> searchAluno(String name) throws Exception {
 		List<Aluno> result;
 		try {
-			result = dao.list("alunoName", name);
+			result = dao.list("listNameAluno", name);
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException("Ocorreu um erro ao pesquisar os dados do aluno.");
 		} catch (Exception e) {
