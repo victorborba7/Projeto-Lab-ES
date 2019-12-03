@@ -126,9 +126,8 @@ public class ProfessorServlet extends HttpServlet {
 			ObjectMapper mapper = new ObjectMapper();
 			String result = mapper.writeValueAsString(profs);
 			request.setAttribute("result", result);
-			System.out.println(result);
 			response.addHeader("result", result);
-			response.getWriter().write("Professores: " + result);
+			response.getWriter().write("Dojos: " + result);
 		} catch (IOException e) {
 			logger.info(e.getMessage());
 		} catch (Exception e) {
@@ -141,7 +140,7 @@ public class ProfessorServlet extends HttpServlet {
 		response.setContentType("text/plain");
 		response.setCharacterEncoding("UTF-8");
 		try {
-			profs = professor.searchProfessor(request.getParameter("nome_dojo_filtrar"));
+			profs = professor.searchProfessor(request.getParameter("nome_professor_filtrar"));
 			ObjectMapper mapper = new ObjectMapper();
 			String result = mapper.writeValueAsString(profs);
 			System.out.println(result);
