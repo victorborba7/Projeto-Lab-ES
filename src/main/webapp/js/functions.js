@@ -13,30 +13,94 @@ function controlarCamposDesabilitadosProfessores(val){
 function limparCampos(){
 	$("input").val("");
 }
-//
-function generateTable(id, data){
+
+function generateTableDojos(filtro){
+	$.post("/judocas/dojo/listar.do",
+			{
+				operacao: "listar",
+				filtrar: filtro
+			},
+			function(data){
+				var dojos = JSON.parse(data.replace("Dojos: ", ""));
+				var table = $('<table>');
+				var row = $('<tr>');
+				var cell = $('<th>').text('Nome');
+			    row.append(cell);
+				var cell = $('<th>').text('CNPJ');
+			    row.append(cell);
+				var cell = $('<th>').text('Endereço');
+				row.append(cell);
+			    table.append(row);
+				for(i in dojos){
+					row = $('<tr>');
+					cell = $('<td>').text(dojos[i].nome);
+				    row.append(cell);
+					cell = $('<td>').text(dojos[i].cnpj);
+				    row.append(cell);
+					cell = $('<td>').text(dojos[i].endereco.rua + ", Nº " + dojos[i].endereco.numero);
+				    row.append(cell);
+				    table.append(row);
+				}
+				$("#table_dojos").append(table);
+			});
+}
+
+function generateTableAlunos(filtro){
+	$.post("/judocas/aluno/listar.do",
+			{
+				operacao: "listar",
+				filtrar: filtro
+			},
+			function(data){
+				var alunos = JSON.parse(data.replace("Alunos: ", ""));
+				var table = $('<table>');
+				var row = $('<tr>');
+				var cell = $('<th>').text('Nome');
+			    row.append(cell);
+				var cell = $('<th>').text('CBJ');
+			    row.append(cell);
+				var cell = $('<th>').text('CPF');
+				row.append(cell);
+				var cell = $('<th>').text('Telefone');
+				row.append(cell);
+				var cell = $('<th>').text('Endereco');
+				row.append(cell);
+				var cell = $('<th>').text('Professor');
+				row.append(cell);
+				var cell = $('<th>').text('Dojo');
+				row.append(cell);
+			    table.append(row);
+				for(i in alunos){
+					row = $('<tr>');
+					cell = $('<td>').text(alunos[i].filiado.nome);
+				    row.append(cell);
+					cell = $('<td>').text(alunos[i].filiado.registroCbj);
+				    row.append(cell);
+					cell = $('<td>').text(alunos[i].filiado.cpf);
+				    row.append(cell);
+					cell = $('<td>').text(alunos[i].filiado.telefone1);
+				    row.append(cell);
+					cell = $('<td>').text(alunos[i].filiado.endereco.rua + ", Nº " + alunos[i].filiado.endereco.numero);
+				    row.append(cell);
+					cell = $('<td>').text(alunos[i].professor.filiado.nome);
+				    row.append(cell);
+					cell = $('<td>').text(alunos[i].entidade.nome);
+				    row.append(cell);
+				    table.append(row);
+				}
+				$("#table_alunos").append(table);
+			});
+}
+
+function generateTableProfessores(filtro){
 	$.post("/judocas/professor/listar.do",
 			{
-				operacao: "listar"
+				operacao: "listar",
+				filtrar: filtro
 			},
 			function(data){
 				console.info(data);
 			});
-	var table = $('<table>');
-	for(i=0; i<3; i++){
-		var row = $('<tr>')
-	    for(j=0; j<3; j++){
-	    	if(i == 0){
-	    		var cell = $('<th>').text('header ' + i);
-	    	}else{
-	    		var cell = $('<td>').text('result ' + i);
-	    	}
-		    row.append(cell);
-	    }
-	    table.append(row);
-	}
-
-	$('#' + id).append(table);
 }
 
 function dataFomatada(data, val){

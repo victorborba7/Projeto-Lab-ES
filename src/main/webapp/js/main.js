@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	generateTable("table_alunos", "");
-	generateTable("table_professores", "");
-	generateTable("table_dojos", "");
+	generateTableDojos("");
+	generateTableAlunos("");
+	generateTableProfessores("");
 	$("#boas_vindas").html($("#boas_vindas").html() + " " + window.localStorage.getItem("username"));
 	$("#btn_renovar_professor").hide();
 	$("#btn_renovar_aluno").hide();
@@ -427,34 +427,4 @@ $(document).ready(function(){
 	});
 	
 	//Fim Professor
-	
-	$("#btn_carregar_professores").click(function(){
-		$.post("/judocas/professor/listar.do",
-				{
-					operacao: "listar"
-				},
-				function(data){
-					console.info(data);
-				});
-	});
-	
-	$("#btn_carregar_alunos").click(function(){
-		$.post("/judocas/aluno/listar.do",
-				{
-					operacao: "listar"
-				},
-				function(data){
-					console.info(data);
-				});
-	});
-	
-	$("#btn_carregar_dojos").click(function(){
-		$.post("/judocas/dojo/listar.do",
-				{
-					operacao: "listar"
-				},
-				function(data){
-					console.info(data);
-				});
-	});
 });
