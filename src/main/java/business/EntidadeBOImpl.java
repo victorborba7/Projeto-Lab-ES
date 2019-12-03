@@ -43,7 +43,7 @@ public class EntidadeBOImpl implements EntidadeBO {
 		List<Entidade> result;
 		System.out.println("Value of name: " + name);
 		try {
-			result = dao.list("dojoName", name);
+			result = dao.list("listDojoName", name);
 		} catch (IllegalArgumentException e) {
 			throw new IllegalArgumentException( "Ocorreu um erro ao buscar entidades!"
 				+ " Verifique se todos os dados foram preenchidos corretamente.");
