@@ -18,7 +18,7 @@ function generateTableDojos(filtro){
 	$.post("/judocas/dojo/listar.do",
 			{
 				operacao: "listar",
-				filtrar: filtro
+				nome_dojo_filtrar: filtro
 			},
 			function(data){
 				var dojos = JSON.parse(data.replace("Dojos: ", ""));
@@ -49,7 +49,7 @@ function generateTableAlunos(filtro){
 	$.post("/judocas/aluno/listar.do",
 			{
 				operacao: "listar",
-				filtrar: filtro
+				nome_aluno_filtrar: filtro
 			},
 			function(data){
 				var alunos = JSON.parse(data.replace("Alunos: ", ""));
@@ -96,7 +96,7 @@ function generateTableProfessores(filtro){
 	$.post("/judocas/professor/listar.do",
 			{
 				operacao: "listar",
-				filtrar: filtro
+				nome_professor_filtrar: filtro
 			},
 			function(data){
 				console.info(data);
