@@ -6,6 +6,18 @@ $(document).ready(function(){
 	$("#btn_renovar_professor").hide();
 	$("#btn_renovar_aluno").hide();
 	
+	$("#btn_nome_dojo_filtrar").click(function(){
+		generateTableDojos($("#txb_adm_nome_dojo_filtrar").val());
+	});
+	
+	$("#btn_nome_aluno_filtrar").click(function(){
+		generateTableDojos($("#txb_adm_nome_aluno_filtrar").val());
+	});
+	
+	$("#btn_nome_professor_filtrar").click(function(){
+		generateTableDojos($("#txb_adm_professor_aluno_filtrar").val());
+	});
+	
 	
 	//Dojo
 	$("#btn_adm_nome_dojo_busca").click(function(){
