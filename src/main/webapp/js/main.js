@@ -1,21 +1,21 @@
 $(document).ready(function(){
-	generateTableDojos("");
-	generateTableAlunos("");
-	generateTableProfessores("");
+	generateTableDojos("", "listar");
+	generateTableAlunos("", "listar");
+	generateTableProfessores("", "listar");
 	$("#boas_vindas").html($("#boas_vindas").html() + " " + window.localStorage.getItem("username"));
 	$("#btn_renovar_professor").hide();
 	$("#btn_renovar_aluno").hide();
 	
 	$("#btn_nome_dojo_filtrar").click(function(){
-		generateTableDojos($("#txb_nome_dojo_filtrar").val());
+		generateTableDojos($("#txb_nome_dojo_filtrar").val(), "filtrar");
 	});
 	
 	$("#btn_nome_aluno_filtrar").click(function(){
-		generateTableAlunos($("#txb_nome_aluno_filtrar").val());
+		generateTableAlunos($("#txb_nome_aluno_filtrar").val(), "filtrar");
 	});
 	
 	$("#btn_nome_professor_filtrar").click(function(){
-		generateTableProfessores($("#txb_nome_professor_filtrar").val());
+		generateTableProfessores($("#txb_nome_professor_filtrar").val(), "filtrar");
 	});
 	
 	

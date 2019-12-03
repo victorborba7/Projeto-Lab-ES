@@ -14,10 +14,10 @@ function limparCampos(){
 	$("input").val("");
 }
 
-function generateTableDojos(filtro){
+function generateTableDojos(filtro, param){
 	$.post("/judocas/dojo/listar.do",
 			{
-				operacao: "listar",
+				operacao: param,
 				nome_dojo_filtrar: filtro
 			},
 			function(data){
@@ -41,14 +41,15 @@ function generateTableDojos(filtro){
 				    row.append(cell);
 				    table.append(row);
 				}
+				console.info(table);
 				$("#table_dojos").empty().append(table);
 			});
 }
 
-function generateTableAlunos(filtro){
+function generateTableAlunos(filtro, param){
 	$.post("/judocas/aluno/listar.do",
 			{
-				operacao: "listar",
+				operacao: param,
 				nome_aluno_filtrar: filtro
 			},
 			function(data){
@@ -92,10 +93,10 @@ function generateTableAlunos(filtro){
 			});
 }
 
-function generateTableProfessores(filtro){
+function generateTableProfessores(filtro, param){
 	$.post("/judocas/professor/listar.do",
 			{
-				operacao: "listar",
+				operacao: param,
 				nome_professor_filtrar: filtro
 			},
 			function(data){
