@@ -58,7 +58,7 @@
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div>
-                                <h1 class="text-center" style="margin-bottom: 20px;" id="boas_vindas">Bem vindo</h1>
+                                <h1 class="text-center" style="margin-bottom: 20px;" id="boas_vindas">Ola</h1>
                             </div>
                         </div>
                     </div>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="visualizar_dojos" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-dojos" href="#menu-toggle-visualizar-dojos"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="visualizar_dojos" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-dojos" href="#menu-toggle-visualizar-dojos"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row" style="width: 100%;">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div>
@@ -129,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="cadastrar_professor" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-professor" href="#menu-toggle-cadastrar-professor"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="cadastrar_professor" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-professor" href="#menu-toggle-cadastrar-professor"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div>
@@ -184,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="visualizar_professores" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-professores" href="#menu-toggle-visualizar-professores"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="visualizar_professores" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-professores" href="#menu-toggle-visualizar-professores"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row" style="width: 100%;">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div>
@@ -199,7 +199,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="cadastrar_aluno" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-aluno" href="#menu-toggle-cadastrar-aluno"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="cadastrar_aluno" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-cadastrar-aluno" href="#menu-toggle-cadastrar-aluno"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row" style="width: 100%;">
                         <div class="col-md-12" style="margin-bottom: 50px;">
                             <div>
@@ -255,7 +255,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="visualizar_alunos" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-alunos" href="#menu-toggle-visualizar-alunos"><i class="fa fa-bars" style="color: rgb(0,0,0);"></i></a>
+                <div id="visualizar_alunos" style="display: none;"><a class="btn btn-link" role="button" id="menu-toggle-visualizar-alunos" href="#menu-toggle-visualizar-alunos"><em class="fa fa-bars" style="color: rgb(0,0,0);"></em></a>
                     <div class="row" style="width: 100%;">
                         <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                             <div>
